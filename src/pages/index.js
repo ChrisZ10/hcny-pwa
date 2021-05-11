@@ -1,10 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import "../styles/index.scss";
+import Layout from '../components/layout';
+import Head from '../components/head';
+
+import '../styles/index.scss';
 
 const Home = () => {
   return (
-    <h1>紐約豐收靈糧堂</h1>
+    <Layout>
+      <Head subtitle="首頁"/>
+    </Layout>
   );
 };
 
