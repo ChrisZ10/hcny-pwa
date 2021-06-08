@@ -1,22 +1,36 @@
 import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import * as headerStyles from '../styles/modules/header.module.scss';
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }    
-  `);
-
   return (
     <header className = { headerStyles.header }>
-      <div>{ data.site.siteMetadata.title }</div>
+      <nav>
+        <div>
+          <StaticImage 
+            src = "../assets/logo.png"
+            alt = "logo"
+            placeholder = "none"
+            width = { 70 }
+          />  
+        </div>
+        <ul className = { headerStyles.navbar }>
+          <li>
+            <Link to = "#" className = { headerStyles.navbarItem }>新朋友？</Link>
+          </li>
+          <li>
+            <Link to = "#" className = { headerStyles.navbarItem }>豐收大家庭</Link>
+          </li>
+          <li>
+            <Link to = "#" className = { headerStyles.navbarItem }>靈修裝備</Link>
+          </li>
+          <li>
+            <Link to = "#" className = { headerStyles.navbarItem }>奉獻</Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

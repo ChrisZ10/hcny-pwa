@@ -5,7 +5,16 @@ module.exports = {
     author: "Chris Zhao"
   },
   plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+          name: "src",
+          path: `${__dirname}/src`
+      }
+    },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`
   ]
 }
