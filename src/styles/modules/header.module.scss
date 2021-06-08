@@ -1,4 +1,5 @@
 @import '../base/variables.scss';
+@import '../base/baseline.scss';
 
 .header {
     background-color: white;
@@ -8,16 +9,44 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 10vh;
+    min-height: 12vh;
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.05);
+
+    @include mobile {
+        padding-left: 10%;
+        padding-right: 10%;
+        justify-content: space-between;
+    }
 }
 
 .navbar {
     display: flex;
     width: 40%;
+    margin: 0;
+    padding: 0;
     justify-content: space-around;
 
     li {
         list-style: none;
+    }
+
+    @include tablet {
+        width: 60%;
+    }
+
+    @include mobile {
+        position: absolute;
+        left: 0;
+        top: 12vh;
+        height: 50vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-left: 10%;
+        background-color: white;
+        box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
+        //visibility: hidden;
     }
 }
 
@@ -25,5 +54,20 @@ nav {
     color: $dark;
     text-decoration: none;
     letter-spacing: 3px;
-    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.burger { 
+    display: none;
+
+    & > div {
+        width: 25px;
+        height: 3px;
+        background-color: $dark;
+        margin: 5px;
+    }
+
+    @include mobile {
+        display: block;
+    }
 }

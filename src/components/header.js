@@ -8,6 +8,7 @@ const Header = () => {
   return (
     <header className = { headerStyles.header }>
       <nav>
+        
         <div>
           <StaticImage 
             src = "../assets/logo.png"
@@ -16,6 +17,7 @@ const Header = () => {
             width = { 70 }
           />  
         </div>
+        
         <ul className = { headerStyles.navbar }>
           <li>
             <Link to = "#" className = { headerStyles.navbarItem }>新朋友？</Link>
@@ -30,6 +32,12 @@ const Header = () => {
             <Link to = "#" className = { headerStyles.navbarItem }>奉獻</Link>
           </li>
         </ul>
+        
+        <div className = { headerStyles.burger }>
+          <div className = { headerStyles.line1 }></div>
+          <div className = { headerStyles.line2 }></div>
+          <div className = { headerStyles.line3 }></div>
+        </div>
       </nav>
     </header>
   );
