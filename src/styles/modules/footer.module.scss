@@ -1,0 +1,9 @@
+@import '../base/variables.scss';
+
+.footer {
+    background-color: $dark;
+    
+    * {
+        color: $light;
+    }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
+import * as headerStyles from '../styles/modules/header.module.scss';
+
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -13,8 +15,8 @@ const Header = () => {
   `);
 
   return (
-    <header>
-      <h1>{data.site.siteMetadata.title}</h1>
+    <header className = { headerStyles.header }>
+      <div>{ data.site.siteMetadata.title }</div>
     </header>
   );
 };

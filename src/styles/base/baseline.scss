@@ -49,3 +49,8 @@ html, body {
     font-family: $font-stack;
 	word-wrap: break-word;
 }
+
+/******* development environment *******/
+body {
+	background-color: $light;
+}
