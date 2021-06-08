@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+/******* media query mixins *******/
+@mixin mobile {
+	@media (max-width: $tablet-width - 1) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media (min-width: $desktop-width) and (max-width: $widescreen-width - 1) {
+		@content;
+	}
+}
+@mixin widescreen {
+	@media (min-width: $widescreen-width) and (max-width: $fullHD-width - 1) {
+		@content;
+	}
+}
+@mixin fullHD {
+	@media (min-width: $fullHD-width) {
+		@content;
+	}
+}
+@mixin tablet-and-above {
+	@media (min-width: $tablet-width) {
+		@content;
+	}
+}
+@mixin desktop-and-above {
+	@media (min-width: $desktop-width) {
+		@content;
+	}
+}
+
+/******* general settings *******/
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: $font-stack;
+	word-wrap: break-word;
+}

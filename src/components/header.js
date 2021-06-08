@@ -6,7 +6,7 @@ const Header = () => {
     query {
       site {
         siteMetadata {
-          slogan
+          title
         }
       }
     }    
@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1>{data.site.siteMetadata.slogan}</h1>
+      <h1>{data.site.siteMetadata.title}</h1>
     </header>
   );
 };
