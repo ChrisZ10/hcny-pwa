@@ -15,7 +15,8 @@ const Head = ({ subtitle }) => {
 
   return (
     <Helmet>
-      <title>{`${subtitle} | ${data.site.siteMetadata.title}`}</title>
+      <title>{ `${subtitle} | ${data.site.siteMetadata.title}` }</title>
+      <meta name = "viewport" content = "width=device-width, initial-scale=1" />
     </Helmet>
   );
 };
