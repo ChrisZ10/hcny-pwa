@@ -37,6 +37,8 @@ const Header = () => {
         </ul>
         
         <div 
+          role = "button"
+          tabIndex = {0}
           className = { toggle? headerStyles.burgerToggle : headerStyles.burger } 
           onClick = {() => {
             setActive( !active );
