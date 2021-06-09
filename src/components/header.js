@@ -8,6 +8,7 @@ const Header = () => {
   const [ active, setActive ] = useState(false);
   const [ toggle, setToggle ] = useState(false);
   const [ drop, setDrop ] = useState(false);
+  const [ index, setIndex ] = useState(-1);
 
   return (
     <header className = { headerStyles.header }>
@@ -28,13 +29,15 @@ const Header = () => {
           <li 
             onMouseEnter = {() => {
               setDrop(true);
+              setIndex(0);
             }}
             onMouseLeave = {() => {
               setDrop(false);
+              setIndex(-1);
             }}
           >
             <Link to = "#" className = { headerStyles.navbarItem }>新朋友？</Link>
-            <ul className = { drop? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
+            <ul className = { drop && index === 0? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
               <li>
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
               </li>
@@ -57,13 +60,15 @@ const Header = () => {
           <li
             onMouseEnter = {() => {
               setDrop(true);
+              setIndex(1);
             }}
             onMouseLeave = {() => {
               setDrop(false);
+              setIndex(-1);
             }}
           >
             <Link to = "#" className = { headerStyles.navbarItem }>豐收大家庭</Link>
-            <ul className = { drop? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
+            <ul className = { drop && index === 1? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
               <li>
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>細胞小組</Link>
               </li>
@@ -81,8 +86,30 @@ const Header = () => {
               </li>
             </ul>
           </li>
-          <li>
+          
+          {/******* Devotion&Courses *******/}
+          <li
+            onMouseEnter = {() => {
+              setDrop(true);
+              setIndex(2);
+            }}
+            onMouseLeave = {() => {
+              setDrop(false);
+              setIndex(-1);
+            }}
+          >
             <Link to = "#" className = { headerStyles.navbarItem }>靈修裝備</Link>
+            <ul className = { drop && index === 2? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
+              <li>
+                <Link to = "#" className = { headerStyles.navbarDropdownItem }>每日靈修</Link>
+              </li>
+              <li>
+                <Link to = "#" className = { headerStyles.navbarDropdownItem }>裝備課程</Link>
+              </li>
+              <li>
+                <Link to = "#" className = { headerStyles.navbarDropdownItem }>磐石有聲讀物</Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link to = "#" className = { headerStyles.navbarItem }>奉獻</Link>

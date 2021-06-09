@@ -61,6 +61,10 @@ nav {
     text-decoration: none;
     letter-spacing: 3px;
     position: relative;
+
+    &:hover {
+        color: $primary;
+    }
 }
 
 .burger { 
@@ -121,6 +125,6 @@ nav {
     letter-spacing: .2rem;
 
     &:hover {
-        color: $light;
+        color: beige;
     }
 }
