@@ -46,15 +46,20 @@ nav {
         padding-left: 10%;
         background-color: white;
         box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
-        //visibility: hidden;
+        visibility: hidden;
     }
+}
+
+.navbar-active {
+    @extend .navbar;
+    visibility: visible;
 }
 
 .navbar-item {
     color: $dark;
     text-decoration: none;
     letter-spacing: 3px;
-    font-size: 1.2rem;
+    position: relative;
 }
 
 .burger { 
@@ -69,5 +74,19 @@ nav {
 
     @include mobile {
         display: block;
+    }
+}
+
+.burger-toggle {
+    @extend .burger;
+
+    & .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    & .line2 {
+        opacity: 0;
+    }
+    & .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
