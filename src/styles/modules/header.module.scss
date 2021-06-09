@@ -113,20 +113,11 @@ nav {
         list-style: none;
         margin: 0.7rem;
     }
-
-    @include mobile {
-        position: static;
-        display: none;
-    }
 }
 
 .navbar-dropdown-active {
     @extend .navbar-dropdown;
     visibility: visible;
-
-    &:hover {
-        visibility: visible;
-    }
 }
 
 .navbar-dropdown-item {
