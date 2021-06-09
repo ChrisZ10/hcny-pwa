@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+import { FaChevronDown } from 'react-icons/fa';
 
 import * as headerStyles from '../styles/modules/header.module.scss';
 
@@ -36,7 +37,10 @@ const Header = () => {
               setIndex(-1);
             }}
           >
-            <Link to = "#" className = { headerStyles.navbarItem }>新朋友？</Link>
+            <Link to = "#" className = { headerStyles.navbarItem }>
+              新朋友？
+              <FaChevronDown className = { headerStyles.chevron }/>
+            </Link>
             <ul className = { drop && index === 0? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
               <li>
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
@@ -45,13 +49,13 @@ const Header = () => {
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>聚會時間</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>牧者團隊</Link>
+                <Link to = "#" className = { headerStyles.navbarDropdownItem }>牧者和同工團隊</Link>
               </li>
               <li>
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>尋求代禱</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>聯繫我們</Link>
+                <Link to = "#" className = { headerStyles.navbarDropdownItem }>與我們聯絡</Link>
               </li>
             </ul>
           </li>
