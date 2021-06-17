@@ -41,7 +41,11 @@ const Header = () => {
               新朋友？
               <FaChevronDown className = { headerStyles.chevron }/>
             </Link>
-            <ul className = { drop && index === 0? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
+            <ul className = { 
+              drop && index === 0? 
+              headerStyles.navbarDropdownActive : 
+              headerStyles.navbarDropdown 
+            }>
               <li>
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
               </li>
@@ -72,7 +76,11 @@ const Header = () => {
             }}
           >
             <Link to = "#" className = { headerStyles.navbarItem }>豐收大家庭</Link>
-            <ul className = { drop && index === 1? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
+            <ul className = { 
+              drop && index === 1? 
+              headerStyles.navbarDropdownActive : 
+              headerStyles.navbarDropdown 
+            }>
               <li>
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>細胞小組</Link>
               </li>
@@ -103,7 +111,11 @@ const Header = () => {
             }}
           >
             <Link to = "#" className = { headerStyles.navbarItem }>靈修裝備</Link>
-            <ul className = { drop && index === 2? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
+            <ul className = { 
+              drop && index === 2? 
+              headerStyles.navbarDropdownActive : 
+              headerStyles.navbarDropdown 
+            }>
               <li>
                 <Link to = "#" className = { headerStyles.navbarDropdownItem }>每日靈修</Link>
               </li>
