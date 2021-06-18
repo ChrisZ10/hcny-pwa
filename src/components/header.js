@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { FaChevronDown } from 'react-icons/fa';
+import { BsChevronDown } from 'react-icons/bs';
 
 import * as headerStyles from '../styles/modules/header.module.scss';
 
@@ -15,11 +15,12 @@ const Header = () => {
     <header className = { headerStyles.header }>
       <nav>
         
-        <div>
+        <div className = { headerStyles.navBrand }>
           <StaticImage 
             src = "../assets/logo.png"
             alt = "logo"
             placeholder = "none"
+            layout = "constrained"
             width = { 70 }
           />  
         </div>
@@ -39,7 +40,7 @@ const Header = () => {
           >
             <Link to = "#" className = { headerStyles.navbarItem }>
               新朋友？
-              <FaChevronDown className = { headerStyles.chevron }/>
+              <BsChevronDown className = { headerStyles.chevron }/>
             </Link>
             <ul className = { 
               drop && index === 0? 
@@ -75,7 +76,10 @@ const Header = () => {
               setIndex(-1);
             }}
           >
-            <Link to = "#" className = { headerStyles.navbarItem }>豐收大家庭</Link>
+            <Link to = "#" className = { headerStyles.navbarItem }>
+              豐收大家庭
+              <BsChevronDown className = { headerStyles.chevron }/>
+            </Link>
             <ul className = { 
               drop && index === 1? 
               headerStyles.navbarDropdownActive : 
@@ -110,7 +114,10 @@ const Header = () => {
               setIndex(-1);
             }}
           >
-            <Link to = "#" className = { headerStyles.navbarItem }>靈修裝備</Link>
+            <Link to = "#" className = { headerStyles.navbarItem }>
+              靈修裝備
+              <BsChevronDown className = { headerStyles.chevron }/>
+            </Link>
             <ul className = { 
               drop && index === 2? 
               headerStyles.navbarDropdownActive : 

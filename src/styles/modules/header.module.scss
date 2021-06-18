@@ -9,7 +9,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 12vh;
+    height: 12vh;
     box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.05);
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -21,24 +21,24 @@ nav {
     }
 }
 
+.nav-brand {
+    @include mobile {
+        width: 50px;
+        height: 50px;
+    }  
+}
+
+/******* navbar styles *******/
 .navbar {
     display: flex;
-    width: 40%;
     margin: 0;
     padding: 0;
     justify-content: space-around;
 
     & > li {
         list-style: none;
+        margin: 1rem;
         padding: 0.5rem;
-
-        @include mobile {
-            margin-bottom: 1rem;
-        }
-    }
-
-    @include tablet {
-        width: 60%;
     }
 
     @include mobile {
@@ -46,24 +46,24 @@ nav {
         left: 0;
         top: 12vh;
         width: 100%;
+        padding: 1rem 0 1rem 1rem;
         display: flex;
         flex-direction: column;
         align-items: left;
-        padding-left: 10%;
         background-color: white;
         box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
         visibility: hidden;
     }
 }
-
 .navbar-active {
     @extend .navbar;
     visibility: visible;
 }
 
+/******* navbar item styles *******/
 .navbar-item {
     color: $dark;
-    font-weight: 500;
+    font-size: 1.2rem;
     text-decoration: none;
     letter-spacing: 3px;
     position: relative;
@@ -71,14 +71,9 @@ nav {
     &:hover {
         color: $primary;
     }
-
-    @include mobile {
-        &:hover {
-            color: $dark;
-        }
-    }
 }
 
+/******* menu burger styles *******/
 .burger { 
     display: none;
 
@@ -93,7 +88,6 @@ nav {
         display: block;
     }
 }
-
 .burger-toggle {
     @extend .burger;
 
@@ -108,20 +102,21 @@ nav {
     }
 }
 
+/******* dropdown styles *******/
 .navbar-dropdown {
     position: absolute;
     top: 8vh;
-    padding: 0.5rem;
+    padding: 1rem;
     background-color: $primary;
     box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.1);
     visibility: hidden;
 
     li {
         list-style: none;
-        margin: 0.7rem;
+        margin: 1rem;
+        font-size: 1.2rem;
     }
 }
-
 .navbar-dropdown-active {
     @extend .navbar-dropdown;
     visibility: visible;
@@ -130,32 +125,40 @@ nav {
         position: static;
         background-color: white;
         box-shadow: none;
+        margin: -0.5rem 0 -3rem 0;
     }
 }
 
+/******* dropdown item styles *******/
 .navbar-dropdown-item {
     color: white;
     text-decoration: none;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
 
     &:hover {
-        color: beige;
+        color: $dark;
     }
 
     @include mobile {
         color: $dark;
 
         &:hover {
-            color: $dark;
+            color: $primary;
         }
     }
 }
 
+/******* chevron styles *******/
 .chevron {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0.3rem;
     padding-top: 5px;
-    display: none;
+    text-align: center;
 
     @include mobile {
-        display: inline;
+        float: right;
+        margin-right: 2rem;
+        padding: 0;
     }
 }
