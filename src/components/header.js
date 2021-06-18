@@ -30,37 +30,59 @@ const Header = () => {
           {/******* New Friend *******/}
           <li 
             onMouseEnter = {() => {
-              setDrop(true);
-              setIndex(0);
+              if (window.innerWidth >= 768) {
+                setDrop(true);
+                setIndex(0);
+              }
             }}
             onMouseLeave = {() => {
-              setDrop(false);
-              setIndex(-1);
+              if (window.innerWidth >= 768) {
+                setDrop(false);
+                setIndex(-1);
+              }
             }}
           >
-            <Link to = "#" className = { headerStyles.navbarItem }>
-              新朋友？
-              <BsChevronDown className = { headerStyles.chevron }/>
-            </Link>
+            <div className = { headerStyles.navbarItem }>
+              <Link to = "#new-friends" >新朋友？</Link>
+              <BsChevronDown 
+                className = { headerStyles.chevron }
+                onClick = {() => {
+                  if (window.innerWidth < 768) {
+                    if (index === -1) {
+                      setDrop(true);
+                      setIndex(0);
+                    } else {
+                      if (index !== 0) {
+                        setDrop(true);
+                        setIndex(0);
+                      } else {
+                        setDrop(false);
+                        setIndex(-1);
+                      }
+                    }
+                  }
+                }}
+              />
+            </div>
             <ul className = { 
               drop && index === 0? 
               headerStyles.navbarDropdownActive : 
               headerStyles.navbarDropdown 
             }>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
+                <Link to = "#about-us" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>聚會時間</Link>
+                <Link to = "#service-time" className = { headerStyles.navbarDropdownItem }>聚會時間</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>牧者和同工團隊</Link>
+                <Link to = "#staff" className = { headerStyles.navbarDropdownItem }>牧者和同工團隊</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>尋求代禱</Link>
+                <Link to = "#prayer-request" className = { headerStyles.navbarDropdownItem }>尋求代禱</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>與我們聯絡</Link>
+                <Link to = "#contact-us" className = { headerStyles.navbarDropdownItem }>與我們聯絡</Link>
               </li>
             </ul>
           </li>
@@ -68,37 +90,59 @@ const Header = () => {
           {/******* Get Involved *******/}
           <li
             onMouseEnter = {() => {
-              setDrop(true);
-              setIndex(1);
+              if (window.innerWidth >= 768) {
+                setDrop(true);
+                setIndex(1);
+              }
             }}
             onMouseLeave = {() => {
-              setDrop(false);
-              setIndex(-1);
+              if (window.innerWidth >= 768) {
+                setDrop(false);
+                setIndex(-1);
+              }
             }}
           >
-            <Link to = "#" className = { headerStyles.navbarItem }>
-              豐收大家庭
-              <BsChevronDown className = { headerStyles.chevron }/>
-            </Link>
+            <div className = { headerStyles.navbarItem }>
+              <Link to = "#get-involved" >豐收大家庭</Link>
+              <BsChevronDown 
+                className = { headerStyles.chevron }
+                onClick = {() => {
+                  if (window.innerWidth < 768) {
+                    if (index === -1) {
+                      setDrop(true);
+                      setIndex(1);
+                    } else {
+                      if (index !== 1) {
+                        setDrop(true);
+                        setIndex(1);
+                      } else {
+                        setDrop(false);
+                        setIndex(-1);
+                      }
+                    }
+                  }
+                }}
+              />
+            </div>
             <ul className = { 
               drop && index === 1? 
               headerStyles.navbarDropdownActive : 
               headerStyles.navbarDropdown 
             }>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>細胞小組</Link>
+                <Link to = "#cell-group" className = { headerStyles.navbarDropdownItem }>細胞小組</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>豐收義工團隊</Link>
+                <Link to = "#volunteer" className = { headerStyles.navbarDropdownItem }>豐收義工團隊</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>通知看板</Link>
+                <Link to = "#news" className = { headerStyles.navbarDropdownItem }>通知看板</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>近期活動</Link>
+                <Link to = "#events" className = { headerStyles.navbarDropdownItem }>近期活動</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>代禱事項</Link>
+                <Link to = "#prayers" className = { headerStyles.navbarDropdownItem }>代禱事項</Link>
               </li>
             </ul>
           </li>
@@ -106,36 +150,60 @@ const Header = () => {
           {/******* Devotion&Courses *******/}
           <li
             onMouseEnter = {() => {
-              setDrop(true);
-              setIndex(2);
+              if (window.innerWidth >= 768) {
+                setDrop(true);
+                setIndex(2);
+              }
             }}
             onMouseLeave = {() => {
-              setDrop(false);
-              setIndex(-1);
+              if (window.innerWidth >= 768) {
+                setDrop(false);
+                setIndex(-1);
+              }
             }}
           >
-            <Link to = "#" className = { headerStyles.navbarItem }>
-              靈修裝備
-              <BsChevronDown className = { headerStyles.chevron }/>
-            </Link>
+            <div className = { headerStyles.navbarItem }>
+              <Link to = "#devotion-courses" >靈修裝備</Link>
+              <BsChevronDown 
+                className = { headerStyles.chevron }
+                onClick = {() => {
+                  if (window.innerWidth < 768) {
+                    if (index === -1) {
+                      setDrop(true);
+                      setIndex(2);
+                    } else {
+                      if (index !== 2) {
+                        setDrop(true);
+                        setIndex(2);
+                      } else {
+                        setDrop(false);
+                        setIndex(-1);
+                      }
+                    }
+                  }
+                }}
+              />
+            </div>
             <ul className = { 
               drop && index === 2? 
               headerStyles.navbarDropdownActive : 
               headerStyles.navbarDropdown 
             }>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>每日靈修</Link>
+                <Link to = "#daily-devotion" className = { headerStyles.navbarDropdownItem }>每日靈修</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>裝備課程</Link>
+                <Link to = "#courses" className = { headerStyles.navbarDropdownItem }>裝備課程</Link>
               </li>
               <li>
-                <Link to = "#" className = { headerStyles.navbarDropdownItem }>磐石有聲讀物</Link>
+                <Link to = "#audible" className = { headerStyles.navbarDropdownItem }>磐石有聲讀物</Link>
               </li>
             </ul>
           </li>
           <li>
-            <Link to = "#" className = { headerStyles.navbarItem }>奉獻</Link>
+            <div className = { headerStyles.navbarItem }>
+              <Link to = "#offering" >奉獻</Link>
+            </div>
           </li>
         </ul>
         

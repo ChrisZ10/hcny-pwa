@@ -62,14 +62,33 @@ nav {
 
 /******* navbar item styles *******/
 .navbar-item {
-    color: $dark;
-    font-size: 1.2rem;
-    text-decoration: none;
-    letter-spacing: 3px;
-    position: relative;
-
+    & > * {
+        text-decoration: none;
+        letter-spacing: 3px;
+        color: $dark;
+        font-size: 1.2rem;
+    }
+    
     &:hover {
-        color: $primary;
+        * {
+            color: $primary;
+        }
+    }
+}
+
+/******* chevron styles *******/
+.chevron {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: relative;
+    top: 0.3rem;
+    margin-left: 0.3rem;
+    text-align: center;
+
+    @include mobile {
+        float: right;
+        margin-right: 2rem;
+        padding: 0;
     }
 }
 
@@ -145,20 +164,5 @@ nav {
         &:hover {
             color: $primary;
         }
-    }
-}
-
-/******* chevron styles *******/
-.chevron {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-left: 0.3rem;
-    padding-top: 5px;
-    text-align: center;
-
-    @include mobile {
-        float: right;
-        margin-right: 2rem;
-        padding: 0;
     }
 }
