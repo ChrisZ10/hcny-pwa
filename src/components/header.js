@@ -6,10 +6,10 @@ import { BsChevronDown } from 'react-icons/bs';
 import * as headerStyles from '../styles/modules/header.module.scss';
 
 const Header = () => {
-  const [ active, setActive ] = useState(false);
-  const [ toggle, setToggle ] = useState(false);
-  const [ drop, setDrop ] = useState(false);
-  const [ index, setIndex ] = useState(-1);
+  const [ active, setActive ] = useState(false); // if active, show navbar, vice versa
+  const [ toggle, setToggle ] = useState(false); // if toggle, transform burger into cross
+  const [ drop, setDrop ] = useState(false); // if drop, show dropdown menu. Work together with 'index'
+  const [ index, setIndex ] = useState(-1); // show dropdown menu of element at index. Work together with 'drop'
 
   return (
     <header className = { headerStyles.header }>
@@ -65,10 +65,7 @@ const Header = () => {
               />
             </div>
             <ul className = { 
-              drop && index === 0? 
-              headerStyles.navbarDropdownActive : 
-              headerStyles.navbarDropdown 
-            }>
+              drop && index === 0? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
               <li>
                 <Link to = "#about-us" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
               </li>
@@ -124,11 +121,7 @@ const Header = () => {
                 }}
               />
             </div>
-            <ul className = { 
-              drop && index === 1? 
-              headerStyles.navbarDropdownActive : 
-              headerStyles.navbarDropdown 
-            }>
+            <ul className = { drop && index === 1? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
               <li>
                 <Link to = "#cell-group" className = { headerStyles.navbarDropdownItem }>細胞小組</Link>
               </li>
@@ -184,11 +177,7 @@ const Header = () => {
                 }}
               />
             </div>
-            <ul className = { 
-              drop && index === 2? 
-              headerStyles.navbarDropdownActive : 
-              headerStyles.navbarDropdown 
-            }>
+            <ul className = { drop && index === 2? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
               <li>
                 <Link to = "#daily-devotion" className = { headerStyles.navbarDropdownItem }>每日靈修</Link>
               </li>
@@ -200,6 +189,7 @@ const Header = () => {
               </li>
             </ul>
           </li>
+
           <li>
             <div className = { headerStyles.navbarItem }>
               <Link to = "#offering" >奉獻</Link>
@@ -214,6 +204,8 @@ const Header = () => {
           onClick = {() => {
             setActive( !active );
             setToggle( !toggle );
+            setDrop(!drop);
+            setIndex(-1);
           }}
         >
           <div className = { headerStyles.line1 }></div>
