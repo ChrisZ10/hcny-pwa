@@ -2,7 +2,10 @@ module.exports = {
   siteMetadata: {
     title: "紐約豐收靈糧堂",
     slogan: "建造榮耀的教會",
-    author: "Chris Zhao"
+    author: "Chris Zhao",
+    address: "54-47 Little Neck Pkwy, Little Neck, NY 11362",
+    email: "info@hcny.org",
+    phone: "+1 (718) 715 - 1730"
   },
   plugins: [
     {
