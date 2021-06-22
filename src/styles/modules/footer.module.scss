@@ -31,14 +31,19 @@
     align-content: center;
 }
 .youtube, .facebook {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     margin: 0.5rem;
+
+    &:hover {
+        cursor: pointer;
+        filter: invert(50%);
+    }
 }
 
 .address, .email {
     letter-spacing: 0.2rem;
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 1rem !important;
 }
 .phone {
     letter-spacing: 0.1rem;
@@ -46,14 +51,19 @@
 
 .copyright {
     letter-spacing: 0.2rem;
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 1rem !important;
 }
 
 .legal {
     margin-bottom: 0 !important;
 
-    & > span {
+    & > .legal-link {
+        text-decoration: none;
         letter-spacing: 0.2rem;
         margin: 0.5rem 1rem;
+
+        &:hover {
+            filter: invert(50%);
+        }
     }
 }
