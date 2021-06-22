@@ -1,9 +1,69 @@
 @import '../base/variables.scss';
 
 .footer {
+    padding: 3rem;
     background-color: $dark;
+    text-align: center;
     
+    & > p {
+        margin: 0 0 3rem 0;
+    }
+
     * {
         color: $light;
+    }
+}
+
+.slogan {
+    font-size: 1.5rem;
+    font-weight: 100;
+    letter-spacing: 0.5rem;
+    margin-bottom: 0 !important;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+}
+
+.sm-container {
+    align-content: center;
+}
+.youtube, .facebook {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5rem;
+
+    &:hover {
+        cursor: pointer;
+        filter: invert(50%);
+    }
+}
+
+.address, .email {
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem !important;
+}
+.phone {
+    letter-spacing: 0.1rem;
+}
+
+.copyright {
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem !important;
+}
+
+.legal {
+    margin-bottom: 0 !important;
+
+    & > .legal-link {
+        text-decoration: none;
+        letter-spacing: 0.2rem;
+        margin: 0.5rem 1rem;
+
+        &:hover {
+            filter: invert(50%);
+        }
     }
 }
