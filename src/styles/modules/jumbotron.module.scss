@@ -1,3 +1,74 @@
+@import '../base/variables.scss';
+@import '../base/baseline.scss';
+
 .container {
     height: 100vh;
+    background-image: url("../../assets/wheat.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    margin: auto;
+}
+
+.title {
+    color: white;
+    font-size: 7rem;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+.subtitle {
+    color: white;
+    font-size: 7rem;
+    font-weight: 200;
+    letter-spacing: 1rem;
+    margin: 0 0 -2rem 0;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+}
+.button {
+    text-decoration: none;
+    background-color: white;
+    border-radius: 45px;
+    padding: 1rem 2rem;
+    margin: auto;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    color: $dark;
+}
+
+.chevron {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    visibility: hidden;
+}
+.chevron-active {
+    @extend .chevron;
+    visibility: visible;
+    animation: scrolldown 2s infinite;
+}
+@keyframes scrolldown {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    20% {
+        transform: translate(-50%, 10px);
+    }
+    40% {
+        transform: translate(-50%, 0);
+    }
 }
