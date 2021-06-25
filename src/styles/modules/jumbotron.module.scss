@@ -19,8 +19,15 @@
     font-size: 7rem;
     font-weight: bold;
     letter-spacing: 1rem;
-    margin: 0 0 2rem 0;
+    margin: 0 0 3rem 0;
+    padding: 0 4rem;
     text-align: center;
+    line-height: 100%;
+
+    @include mobile {
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+    }
 }
 
 .subtitle {
@@ -28,8 +35,16 @@
     font-size: 7rem;
     font-weight: 200;
     letter-spacing: 1rem;
-    margin: 0 0 -2rem 0;
+    margin: 1rem 0 0 0;
+    padding: 0 4rem;
     text-align: center;
+    line-height: 100%;
+
+    @include mobile {
+        margin-bottom: 0;
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+    }
 }
 
 .button-container {
@@ -55,6 +70,10 @@
     transform: translateX(-50%);
     color: white;
     visibility: hidden;
+
+    @include mobile {
+        bottom: 30px;
+    }
 }
 .chevron-active {
     @extend .chevron;
