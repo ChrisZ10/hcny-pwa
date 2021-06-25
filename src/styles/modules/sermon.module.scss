@@ -1,0 +1,24 @@
+@import '../base/baseline.scss';
+
+.container {
+    height: 500px;
+    background-color: white;
+    padding: 7%;
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.left-column {
+    background-color: gray;
+}
+
+.right-column {
+    background-color: darkgray;
+}

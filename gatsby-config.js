@@ -15,9 +15,18 @@ module.exports = {
           path: `${__dirname}/src`
       }
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+          typeName: "WPGraphQL",
+          fieldName: "wpContent",
+          url: "https://hcny.org/graphql"
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-playground`
   ]
 }
