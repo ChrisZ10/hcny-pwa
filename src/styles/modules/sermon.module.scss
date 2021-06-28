@@ -1,4 +1,5 @@
 @import '../base/baseline.scss';
+@import '../base/variables.scss';
 
 .container {
     background-color: white;
@@ -16,12 +17,86 @@
 
 .left-column {
     padding: 3rem;
+
+    @include mobile {
+        padding: 1rem 0.5rem 0 0.5rem;
+        margin-bottom: 2rem;
+    }
 }
+
 .cover {
-    border-radius: 45px;
-    box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 3rem;
+    box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.5);
+
+    @include mobile {
+        box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .right-column {
-    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2rem;
+
+    @include tablet {
+        margin-left: 0;
+    }
+    @include mobile {
+        margin-left: 0;
+    }
+
+    & > p {
+        margin: 0;
+        letter-spacing: 0.3rem;
+
+        @include tablet {
+            text-align: center;
+        }
+        @include mobile {
+            line-height: 150%;
+            text-align: center;
+            letter-spacing: 0; 
+        }
+    }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+}
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.speaker {
+    font-size: 2.5rem;
+}
+
+.button-container {
+    display: flex;
+    margin-top: 2rem;
+
+    @include tablet {
+        margin: 2rem auto;
+    }
+    @include mobile {
+        margin: 2rem auto 1rem;
+    }
+
+    & > a {
+        text-decoration: none;
+        border-radius: 45px;
+        margin-right: 1rem;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        font-size: 1.5rem;
+        letter-spacing: 0.5rem;
+        border: $primary solid 3px;
+    }
+}
+.button {    
+    background-color: $primary;
+    color: white;
+}
+.button-hollow {
+    color: $primary;
 }

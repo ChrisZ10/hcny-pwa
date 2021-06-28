@@ -16,7 +16,15 @@ const Sermon = () => {
           className = { sermonStyles.cover }
         />
       </div>
-      <div className = { sermonStyles.rightColumn }>Right Column</div>
+      <div className = { sermonStyles.rightColumn }>
+        <p className = { sermonStyles.subtitle }>主日信息 | 6月27日</p>
+        <p className = { sermonStyles.title }>呼召吹號者</p>
+        <p className = { sermonStyles.speaker }>鄭立新 牧師</p>
+        <div className = { sermonStyles.buttonContainer }>
+          <a href = "#watch" className = { sermonStyles.button }>觀看</a>
+          <a href = "#more" className = { sermonStyles.buttonHollow }>更多</a>
+        </div>
+      </div>
     </div>
   );
 }
