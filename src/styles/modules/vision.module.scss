@@ -1,5 +1,42 @@
+@import '../base/variables.scss';
+
 .container {
     background-image: url("../../assets/glorious.jpg");
     background-size: cover;
     background-position: center;
+    padding: 7vh 15vw;
+
+    & > p {
+        margin: 0;
+        color: white;
+        letter-spacing: 0.2rem;
+    }
+}
+
+$size: 3.5rem;
+.title {
+    font-size: calc(#{$size});
+    font-weight: bold;
+}
+.subtitle, .description {
+    font-size: calc(#{$size} * 0.4);
+}
+
+.button-container {
+    margin-top: 4rem;
+}
+.button {
+    margin-right: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    background-color: $primary;
+    letter-spacing: 0.5rem;
+    border: $primary solid 3px;
+    border-radius: 3rem;
+
+    &:hover {
+        color: $dark;
+    }
 }
