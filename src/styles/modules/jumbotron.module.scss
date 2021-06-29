@@ -44,12 +44,16 @@
 .button {
     text-decoration: none;
     background-color: white;
-    border-radius: 45px;
+    border-radius: 3rem;
     padding: 1rem 2rem;
     margin: auto;
     font-size: 1.5rem;
     letter-spacing: 0.5rem;
     color: $dark;
+
+    &:hover {
+        color: $primary;
+    }
 }
 
 /******* chevron *******/
