@@ -5,6 +5,7 @@ import Head from '../components/head';
 import Jumbotron from '../components/jumbotron';
 import Sermon from '../components/sermon';
 import Vision from '../components/vision';
+import Location from '../components/location';
 
 import '../styles/index.scss';
 
@@ -15,6 +16,7 @@ const Home = () => {
       <Jumbotron />
       <Sermon />
       <Vision />
+      <Location />
     </Layout>
   );
 };

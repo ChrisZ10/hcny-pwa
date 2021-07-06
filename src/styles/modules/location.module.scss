@@ -1,0 +1,31 @@
+@import '../base/baseline.scss';
+
+.container {
+    background-color: white;
+    padding: 7vh 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.left-column, .right-column {
+    padding: 3rem;
+
+    @include mobile {
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+}
+.map {
+    padding-top: 100%;
+    filter: grayscale(100%);
+    border-radius: 3rem;
+    box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
+    overflow: 'hidden'
+}
