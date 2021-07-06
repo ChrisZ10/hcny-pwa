@@ -13,6 +13,7 @@
     }
 }
 
+/******* text styles *******/
 $size: 3.5rem;
 .title {
     font-size: calc(#{$size});
@@ -23,6 +24,7 @@ $size: 3.5rem;
     font-size: calc(#{$size} * 0.4);
 }
 
+/******* button styles *******/
 .button-container {
     margin-top: 4rem;
 }
