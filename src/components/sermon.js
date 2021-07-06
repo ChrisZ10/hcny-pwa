@@ -6,9 +6,9 @@ import * as sermonStyles from '../styles/modules/sermon.module.scss';
 const Sermon = () => {
 
   const data = {
-    date: "6月27日",
-    title: "呼召吹號者",
-    speaker: "鄭立新 牧師"
+    date: "7月4日",
+    title: "异象帶來突破",
+    speaker: "蕭慕道 牧師"
   }
 
   return (
