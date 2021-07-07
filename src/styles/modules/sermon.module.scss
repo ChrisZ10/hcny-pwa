@@ -2,7 +2,6 @@
 @import '../base/variables.scss';
 
 .container {
-    background-color: white;
     padding: 7vh 10vw;
     display: grid;
     grid-template-columns: 7fr 5fr;
@@ -42,6 +41,7 @@
     & > p {
         margin: 0;
         letter-spacing: 0.3rem;
+        color: $dark;
 
         @include tablet {
             text-align: center;
