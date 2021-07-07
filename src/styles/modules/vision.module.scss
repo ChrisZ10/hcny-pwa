@@ -1,8 +1,13 @@
+@import '../base/baseline.scss';
 @import '../base/variables.scss';
 
 .grid {
     display: grid;
-    height: 60vh;
+    height: fit-content;
+
+    @include desktop-and-above {
+        height: 60vh;
+    }
 }
 
 .background {
@@ -15,7 +20,7 @@
     padding: 15vh 15vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     & > p {
         margin: 0 0 1rem;
