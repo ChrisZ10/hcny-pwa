@@ -70,7 +70,7 @@ const Header = () => {
                 <Link to = "#about-us" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
               </li>
               <li>
-                <Link to = "#service-time" className = { headerStyles.navbarDropdownItem }>聚會時間</Link>
+                <Link to = "/service-time" className = { headerStyles.navbarDropdownItem }>聚會時間</Link>
               </li>
               <li>
                 <Link to = "#staff" className = { headerStyles.navbarDropdownItem }>牧者和同工團隊</Link>
