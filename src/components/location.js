@@ -1,25 +1,31 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 import * as locationStyles from '../styles/modules/location.module.scss';
 
+/******* Google Api Key *******/
+/******* Potential Improvement: Store it more securely *******/
 const apiKey = "AIzaSyCbRnhNO-Nh2aIWKg99DzdCc_e3L7M7rUs";
 
 const Location = ({ google }) => {
 
+  /******* Fetch site metadata *******/
   const res = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title,
-          address
+          address,
+          mainServiceTime,
+          sundaySchoolZoom
         }
       }
     }    
   `);
   
+  /******* Church Geographic Coordinate *******/
+  /******* Potential Improvement: Make them constants *******/
   const geo = {
     lat: 40.76662245529929,
     lng: -73.72475775191116
@@ -27,13 +33,16 @@ const Location = ({ google }) => {
 
   return (
     <>
+      {/******* Title *******/}
       <h1 className = { locationStyles.title }>聚會時間</h1>
+      
+      {/******* Container *******/}
       <div className = { locationStyles.container }>
         
         {/******* Left Column *******/}
         <div className = { locationStyles.leftColumn }>
           
-          {/******* Map *******/}
+          {/******* Church Map *******/}
           <div className = { locationStyles.map }>
             <Map 
               google = { google }
@@ -58,8 +67,16 @@ const Location = ({ google }) => {
           </div>
 
           {/******* Text *******/}
-          <p><strong>中文堂</strong><br></br>週日上午10:30AM</p>
-          <p><strong>英文堂</strong><br></br>週日上午10:30AM</p>
+          <p>
+            <strong>中文堂</strong>
+            <br></br>
+            { res.site.siteMetadata.mainServiceTime }
+          </p>
+          <p>
+            <strong>英文堂</strong>
+            <br></br>
+            { res.site.siteMetadata.mainServiceTime }
+          </p>
           <p>{ res.site.siteMetadata.address }</p>
 
         </div>{/* Left column ends here */}
@@ -67,7 +84,7 @@ const Location = ({ google }) => {
         {/******* Right Column *******/}
         <div className = { locationStyles.rightColumn }>
 
-          {/******* Map *******/}
+          {/******* General Map *******/}
           <div className = { locationStyles.map }>
             <Map 
               google = { google }
@@ -86,9 +103,21 @@ const Location = ({ google }) => {
           </div>
 
           {/******* Text *******/}
-          <p><strong>線上</strong><br></br>週日上午10:30AM</p>
-          <p><strong>兒童敬拜</strong><br></br>週日上午10:30AM</p>
-          <p>線上崇拜通過Youtube直播<br></br>兒童敬拜Zoom ID: 564 403 7557</p>
+          <p>
+            <strong>線上</strong>
+            <br></br>
+            { res.site.siteMetadata.mainServiceTime }
+          </p>
+          <p>
+            <strong>兒童敬拜</strong>
+            <br></br>
+            { res.site.siteMetadata.mainServiceTime }
+          </p>
+          <p>
+            線上崇拜通過Youtube直播
+            <br></br>
+            兒童敬拜Zoom ID: { res.site.siteMetadata.sundaySchoolZoom }
+          </p>
 
         </div>{/* Right column ends here */}
 

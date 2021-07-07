@@ -5,7 +5,9 @@ module.exports = {
     author: "Chris Zhao",
     address: "54-47 Little Neck Pkwy, Little Neck, NY 11362",
     email: "info@hcny.org",
-    phone: "+1 (718) 715 - 1730"
+    phone: "+1 (718) 715 - 1730",
+    mainServiceTime: "週日10:30AM",
+    sundaySchoolZoom: "564 403 7557"
   },
   plugins: [
     {
