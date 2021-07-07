@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import * as visionStyles from '../styles/modules/vision.module.scss';
@@ -23,13 +24,23 @@ const Vision = () => {
   }
 
   return (
-    <div className = { visionStyles.container }>
-      <p className = { visionStyles.subtitle }>{ data.subtitle }</p>
-      <p className = { visionStyles.title }>{ data.title }</p>
-      <p className = { visionStyles.description }>{ data.description }</p>
+    <div className = { visionStyles.grid }>
+      <StaticImage 
+        className = { visionStyles.background }
+        src = "../assets/glorious.jpg"
+        alt = "glorious"
+        layout = "fullWidth"
+        placeholder = "blurred"
+      />
 
-      <div className = { visionStyles.buttonContainer }>
-        <a href = "#vision" className = { visionStyles.button } >了解教會異象</a>
+      <div className = { visionStyles.container }>
+        <p className = { visionStyles.subtitle }>{ data.subtitle }</p>
+        <p className = { visionStyles.title }>{ data.title }</p>
+        <p className = { visionStyles.description }>{ data.description }</p>
+
+        <div className = { visionStyles.buttonContainer }>
+          <a href = "#vision" className = { visionStyles.button } >了解教會異象</a>
+        </div>
       </div>
     </div>
   );
