@@ -67,19 +67,19 @@ const Header = () => {
             <ul className = { 
               drop && index === 0? headerStyles.navbarDropdownActive : headerStyles.navbarDropdown }>
               <li>
-                <Link to = "#about-us" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
+                <Link to = "/about-us" className = { headerStyles.navbarDropdownItem }>關於我們</Link>
               </li>
               <li>
                 <Link to = "/service-time" className = { headerStyles.navbarDropdownItem }>聚會時間</Link>
               </li>
               <li>
-                <Link to = "#staff" className = { headerStyles.navbarDropdownItem }>牧者和同工團隊</Link>
+                <Link to = "/staff" className = { headerStyles.navbarDropdownItem }>牧者和同工團隊</Link>
               </li>
               <li>
-                <Link to = "#prayer-request" className = { headerStyles.navbarDropdownItem }>尋求代禱</Link>
+                <Link to = "/prayer-request" className = { headerStyles.navbarDropdownItem }>尋求代禱</Link>
               </li>
               <li>
-                <Link to = "#contact-us" className = { headerStyles.navbarDropdownItem }>與我們聯絡</Link>
+                <Link to = "/contact-us" className = { headerStyles.navbarDropdownItem }>與我們聯絡</Link>
               </li>
             </ul>
           </li>

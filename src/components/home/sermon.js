@@ -18,7 +18,7 @@ const Sermon = () => {
       {/******* left column *******/}
       <div className = { sermonStyles.leftColumn }>
         <StaticImage
-          src = "../../assets/sermon_cover.jpg"
+          src = "../../assets/sermon.jpg"
           alt = "sermon cover"
           placeholder = "blurred"
           layout = "constrained"

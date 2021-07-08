@@ -1,0 +1,44 @@
+@import '../base/variables.scss';
+@import '../base/baseline.scss';
+
+.container {
+    background-color: $light;
+    padding: 10vh 10vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: 5rem;
+    text-align: center;
+
+    @include mobile {
+        font-size: 4rem;
+    }
+}
+
+/******* button *******/
+.button-container {
+    display: flex;
+}
+.button {
+    text-decoration: none;
+    background-color: $primary;
+    border-radius: 3rem;
+    padding: 1rem 2rem;
+    margin: auto;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    color: white;
+
+    &:hover {
+        color: $dark;
+    }
+}
