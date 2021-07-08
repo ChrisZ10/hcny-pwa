@@ -4,6 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { BsChevronDown } from 'react-icons/bs';
 
 import * as bannerStyles from '../../styles/modules/banner.module.scss';
+import * as textStyles from '../../styles/modules/elements/text.module.scss';
+import * as chevronStyles from '../../styles/modules/elements/chevron.module.scss';
 
 const Banner = () => {
 
@@ -46,11 +48,11 @@ const Banner = () => {
 
       <div className = { bannerStyles.container }>
         <div className = {bannerStyles.main}>
-          <h1 className = { bannerStyles.subtitle }>歡迎來到{ data.site.siteMetadata.title }</h1>
-          <h1 className = { bannerStyles.title }>{ data.site.siteMetadata.slogan }</h1>
+          <h1 className = { textStyles.bannerSubtitle }>歡迎來到{ data.site.siteMetadata.title }</h1>
+          <h1 className = { textStyles.bannerTitle }>{ data.site.siteMetadata.slogan }</h1>
         </div>
 
-        <BsChevronDown className = { scrolling? bannerStyles.chevronActive : bannerStyles.chevron }/>
+        <BsChevronDown className = { scrolling? chevronStyles.chevronActive : chevronStyles.chevron }/>
       </div>
     </div>
   );
