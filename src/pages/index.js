@@ -12,7 +12,7 @@ import '../styles/index.scss';
 const Home = () => {
   return (
     <Layout>
-      <Head subtitle="首頁"/>
+      <Head subtitle = "首頁"/>
       <Jumbotron />
       <Sermon />
       <Vision />
