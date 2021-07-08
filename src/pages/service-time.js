@@ -5,13 +5,13 @@ import Head from '../components/head';
 import Location from '../components/home/location';
 
 const ServiceTime = () => {
-    return (
-        <Layout>
-          <Head subtitle = "聚會時間"/>
-          <div style = {{ height: "10vh" }}></div>
-          <Location />
-        </Layout>
-      );
+  return (
+    <Layout>
+      <Head subtitle = "聚會時間"/>
+      <div style = {{ height: "10vh" }}></div>
+      <Location />
+    </Layout>
+  );
 };
 
 export default ServiceTime;
