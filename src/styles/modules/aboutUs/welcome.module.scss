@@ -1,0 +1,53 @@
+@import '../../base/baseline.scss';
+@import '../../base/variables.scss';
+
+.container {
+    padding: 10vh 10vw;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include desktop-and-above {
+        grid-template-columns: 5fr 7fr;
+    }
+}
+
+/******* left column *******/
+.left-column {
+    padding: 2rem;
+
+    @include mobile {
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+}
+.cover {
+    border-radius: 3rem;
+    box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
+}
+
+/******* right column *******/
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vw;
+
+    @include desktop-and-above {
+        margin-left: 2.5rem;
+        padding: 0;
+    }
+
+    & > p {
+        margin: 0;
+        font-size: 1.3rem;
+        letter-spacing: 0.3rem;
+        color: $dark;
+        line-height: 200%;
+        text-align: justify;
+
+        @include mobile {
+            font-size: 1.5rem;
+            letter-spacing: 0; 
+        }
+    }
+}
