@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import Location from '../components/location';
+import Location from '../components/home/location';
 
 const ServiceTime = () => {
     return (

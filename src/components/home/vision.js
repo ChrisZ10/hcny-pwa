@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import * as visionStyles from '../styles/modules/vision.module.scss';
+import * as visionStyles from '../../styles/modules/home/vision.module.scss';
 
 const Vision = () => {
   
@@ -27,7 +27,7 @@ const Vision = () => {
     <div className = { visionStyles.grid }>
       <StaticImage 
         className = { visionStyles.background }
-        src = "../assets/glorious.jpg"
+        src = "../../assets/glorious.jpg"
         alt = "glorious"
         layout = "fullWidth"
         placeholder = "blurred"

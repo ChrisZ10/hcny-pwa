@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
-import * as locationStyles from '../styles/modules/location.module.scss';
+import * as locationStyles from '../../styles/modules/home/location.module.scss';
 
 /******* Google Api Key *******/
 /******* Potential Improvement: Store it more securely *******/
