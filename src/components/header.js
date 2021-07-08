@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { BsChevronDown } from 'react-icons/bs';
 
@@ -22,6 +22,9 @@ const Header = () => {
             placeholder = "none"
             layout = "constrained"
             width = { 70 }
+            onClick = {() => {
+              navigate("/");
+            }}
           />  
         </div>
         
