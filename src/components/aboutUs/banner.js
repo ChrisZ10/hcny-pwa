@@ -4,8 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { BsChevronDown } from 'react-icons/bs';
 
 import * as bannerStyles from '../../styles/modules/banner.module.scss';
-import * as textStyles from '../../styles/modules/elements/text.module.scss';
-import * as chevronStyles from '../../styles/modules/elements/chevron.module.scss';
+import * as textStyles from '../../styles/modules/text.module.scss';
+import * as chevronStyles from '../../styles/modules/chevron.module.scss';
 
 const Banner = () => {
 
