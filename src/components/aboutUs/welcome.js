@@ -22,7 +22,7 @@ const Welcome = () => {
       
       {/******* right column *******/}
       <div className = { welcomeStyles.rightColumn }>       
-        <p className = { welcomeStyles.paragraph }>
+        <p>
           <strong>歡迎你來到紐約豐收靈糧堂！</strong>
           <br></br>
           <br></br>

@@ -1,34 +1,33 @@
 module.exports = {
   siteMetadata: {
-    title: "紐約豐收靈糧堂",
-    slogan: "建造榮耀的教會",
-    author: "Chris Zhao",
-    address: "54-47 Little Neck Pkwy, Little Neck, NY 11362",
-    email: "info@hcny.org",
-    phone: "+1 (718) 715 - 1730",
-    mainServiceTime: "週日10:30AM",
-    sundaySchoolZoom: "564 403 7557"
+    title: `紐約豐收靈糧堂`,
+    slogan: `建造榮耀的教會`,
+    author: `Chris Zhao`,
+    address: `54-47 Little Neck Pkwy, Little Neck, NY 11362`,
+    email: `info@hcny.org`,
+    phone: `+1 (718) 715 - 1730`,
+    mainServiceTime: `週日10:30AM`,
+    sundaySchoolZoom: `564 403 7557`
   },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-          name: "src",
-          path: `${__dirname}/src`
+        name: `src`,
+        path: `${__dirname}/src`
       }
     },
     {
-      resolve: "gatsby-source-graphql",
+      resolve: `gatsby-source-wordpress`,
       options: {
-          typeName: "WPGraphQL",
-          fieldName: "wpContent",
-          url: "https://hcny.org/graphql"
+        url: `https://hcny.org/graphql`
       }
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-playground`
+    `gatsby-plugin-playground`,
+    `gatsby-transformer-sharp`
   ]
 }
