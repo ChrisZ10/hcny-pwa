@@ -7,6 +7,10 @@
 .grid-md {
     display: grid;
     height: 40vh;
+
+    @include mobile {
+        height: 30vh;
+    }
 }
 
 .background {

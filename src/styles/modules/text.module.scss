@@ -22,6 +22,10 @@
 .bannerTitle {
     @extend .jumboTitle;
     font-size: 5rem !important;
+
+    @include mobile {
+        font-size: 4rem !important;
+    }
 }
 
 .jumboSubtitle {
