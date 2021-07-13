@@ -1,7 +1,7 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 import * as locationStyles from '../../styles/modules/home/location.module.scss';
 
 /******* Google Api Key *******/
@@ -10,19 +10,7 @@ const apiKey = "AIzaSyCbRnhNO-Nh2aIWKg99DzdCc_e3L7M7rUs";
 
 const Location = ({ google }) => {
 
-  /******* Fetch site metadata *******/
-  const res = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title,
-          address,
-          mainServiceTime,
-          sundaySchoolZoom
-        }
-      }
-    }    
-  `);
+  const { title, address, mainServiceTime, sundaySchoolZoom } = useSiteMetadata();
   
   /******* Church Geographic Coordinate *******/
   /******* Potential Improvement: Make them constants *******/
@@ -58,8 +46,8 @@ const Location = ({ google }) => {
               style = {{ width: '100%', height: '100%', borderRadius: '3rem' }}
             > 
               <Marker 
-                title = { res.site.siteMetadata.address }
-                name = { res.site.siteMetadata.title } 
+                title = { address }
+                name = { title } 
                 position = { geo }
                 onClick = {() => { window.open("https://goo.gl/maps/zWJEsDiaPZDmrwNY6"); }}
               />
@@ -70,14 +58,14 @@ const Location = ({ google }) => {
           <p>
             <strong>中文堂</strong>
             <br></br>
-            { res.site.siteMetadata.mainServiceTime }
+            { mainServiceTime }
           </p>
           <p>
             <strong>英文堂</strong>
             <br></br>
-            { res.site.siteMetadata.mainServiceTime }
+            { mainServiceTime }
           </p>
-          <p>{ res.site.siteMetadata.address }</p>
+          <p>{ address }</p>
 
         </div>{/* Left column ends here */}
 
@@ -106,17 +94,17 @@ const Location = ({ google }) => {
           <p>
             <strong>線上</strong>
             <br></br>
-            { res.site.siteMetadata.mainServiceTime }
+            { mainServiceTime }
           </p>
           <p>
             <strong>兒童敬拜</strong>
             <br></br>
-            { res.site.siteMetadata.mainServiceTime }
+            { mainServiceTime }
           </p>
           <p>
             線上崇拜通過Youtube直播
             <br></br>
-            兒童敬拜Zoom ID: { res.site.siteMetadata.sundaySchoolZoom }
+            兒童敬拜Zoom ID: { sundaySchoolZoom }
           </p>
 
         </div>{/* Right column ends here */}

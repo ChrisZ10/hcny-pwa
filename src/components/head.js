@@ -1,21 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
 const Head = ({ subtitle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }    
-  `);
+  const { title } = useSiteMetadata();
 
   return (
     <Helmet>
-      <title>{ `${subtitle} | ${data.site.siteMetadata.title}` }</title>
+      <title>{ `${subtitle} | ${title}` }</title>
       <meta name = "viewport" content = "width=device-width, initial-scale=1" />
     </Helmet>
   );

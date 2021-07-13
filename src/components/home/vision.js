@@ -1,27 +1,12 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql } from 'gatsby';
 
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 import * as visionStyles from '../../styles/modules/home/vision.module.scss';
 
 const Vision = () => {
-  
-  /******* Fetch slogan from site metadata *******/
-  const res = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          slogan
-        }
-      }
-    }    
-  `);
 
-  const data = {
-    subtitle: "豐收靈糧堂異象",
-    title: res.site.siteMetadata.slogan,
-    description: "We shall follow the vision as revealed in Revelation Chapter 22 to build the glorious church of Jesus Christ"
-  }
+  const { slogan, title, description } = useSiteMetadata();
 
   return (
     <div className = { visionStyles.grid }>
@@ -34,9 +19,9 @@ const Vision = () => {
       />
 
       <div className = { visionStyles.container }>
-        <p className = { visionStyles.subtitle }>{ data.subtitle }</p>
-        <p className = { visionStyles.title }>{ data.title }</p>
-        <p className = { visionStyles.description }>{ data.description }</p>
+        <p className = { visionStyles.subtitle }>{ slogan }</p>
+        <p className = { visionStyles.title }>{ title }</p>
+        <p className = { visionStyles.description }>{ description }</p>
 
         <div className = { visionStyles.buttonContainer }>
           <a href = "#vision" className = { visionStyles.button } >了解教會異象</a>
