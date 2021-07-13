@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { BsChevronDown } from 'react-icons/bs';
 
-import * as bannerStyles from '../../styles/modules/banner.module.scss';
-import * as textStyles from '../../styles/modules/text.module.scss';
-import * as chevronStyles from '../../styles/modules/chevron.module.scss';
+import * as bannerStyles from '../styles/modules/banner.module.scss';
+import * as textStyles from '../styles/modules/text.module.scss';
+import * as chevronStyles from '../styles/modules/chevron.module.scss';
 
-const Banner = () => {
-
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title,
-          slogan
-        }
-      }
-    }    
-  `);
+const Banner = ({ imageData, title, subtitle }) => {
 
   const [scrollTop, setScrollTop] = useState(0); // number of pixels the root element is scrolled
   const [scrolling, setScrolling] = useState(true); // set scrolling to be true when scrolling down
@@ -34,22 +22,16 @@ const Banner = () => {
 
   return (
     <div className = { bannerStyles.grid }>
-      <StaticImage
+      <GatsbyImage
         className = { bannerStyles.background }
-        src = "../../assets/church.jpg"
-        alt = "church"
-        aspectRatio = {10/4}
-        layout = "fullWidth"
-        placeholder = "blurred"
-        transformOptions = {{
-          fit: "outside"
-        }}
+        image = { getImage( imageData ) }
+        alt = "Banner Background"
       />
 
       <div className = { bannerStyles.container }>
         <div className = {bannerStyles.main}>
-          <h1 className = { textStyles.bannerSubtitle }>歡迎來到{ data.site.siteMetadata.title }</h1>
-          <h1 className = { textStyles.bannerTitle }>{ data.site.siteMetadata.slogan }</h1>
+          { subtitle !== null && <h1 className = { textStyles.bannerSubtitle }>{ subtitle }</h1> }
+          { title !== null && <h1 className = { textStyles.bannerTitle }>{ title }</h1> }
         </div>
 
         <BsChevronDown className = { scrolling? chevronStyles.chevronActive : chevronStyles.chevron }/>
