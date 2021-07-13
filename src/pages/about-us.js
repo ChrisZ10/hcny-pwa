@@ -1,17 +1,18 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { useSiteMetadata } from '../hooks/useSiteMetaData';
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import Layout from '../components/layout';
 import Head from '../components/head';
 import Banner from '../components/banner';
 import Welcome from '../components/aboutUs/welcome';
+import Statement from '../components/aboutUs/statement';
 
 const AboutUs = () => {
 
   const data = useStaticQuery(graphql`
-    query {
-      imageSharp (
+    query {      
+      banner: imageSharp (
         original: {
           src: {
             regex: "/.*church.*/"
@@ -36,11 +37,12 @@ const AboutUs = () => {
     <Layout>
       <Head subtitle = "關於我們"/>
       <Banner 
-        imageData = { data.imageSharp } 
+        imageData = { data.banner } 
         title = { title }
         subtitle = { slogan } 
       />
       <Welcome />
+      <Statement />
     </Layout>
   );
 };
