@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import * as storyStyles from '../../styles/modules/aboutUs/story.module.scss';
 
-const Story = ({ imageData, description, imageLeft }) => {
+const Story = ({ imageData, description, imageLeft }) => { // imageLeft: boolean
   return (
     <div 
       className = { 
