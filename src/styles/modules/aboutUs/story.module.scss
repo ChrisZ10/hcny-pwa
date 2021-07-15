@@ -1,13 +1,26 @@
 @import '../../base/baseline.scss';
 @import '../../base/variables.scss';
 
-.container {
+.container-image-left, .container-image-right {
   padding: 0 10vw;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas: 
+    "left"
+    "right";
 
   @include desktop-and-above {
     grid-template-columns: 1fr 1fr;
+  }
+}
+.container-image-left {
+  @include desktop-and-above {
+    grid-template-areas: "left right";
+  }  
+}
+.container-image-right {
+  @include desktop-and-above {
+    grid-template-areas: "right left";
   }
 }
 
@@ -22,6 +35,12 @@
     font-size: 1.5rem;
     color: $dark;
   }
+}
+.left-column {
+  grid-area: left;
+}
+.right-column {
+  grid-area: right;
 }
 
 .image {

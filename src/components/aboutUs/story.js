@@ -1,11 +1,17 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import * as storyStyles from '../../../styles/modules/aboutUs/story.module.scss';
+import * as storyStyles from '../../styles/modules/aboutUs/story.module.scss';
 
-const StoryImageLeft = ({ imageData, description }) => {
+const Story = ({ imageData, description, imageLeft }) => {
   return (
-    <div className = { storyStyles.containerImageLeft }>
+    <div 
+      className = { 
+        imageLeft? 
+        storyStyles.containerImageLeft : 
+        storyStyles.containerImageRight 
+      }
+    >
       <div className = { storyStyles.leftColumn }>
         <GatsbyImage
           className = { storyStyles.image }
@@ -21,4 +27,4 @@ const StoryImageLeft = ({ imageData, description }) => {
   );
 };
 
-export default StoryImageLeft;
+export default Story;

@@ -2,8 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SectionBanner from '../sectionBanner';
-import StoryImageLeft from '../aboutUs/story/storyImageLeft';
-import StoryImageRight from '../aboutUs/story/storyImageRight';
+import Story from '../aboutUs/story';
 
 const History = () => {
   
@@ -37,13 +36,15 @@ const History = () => {
         title = "我們的故事"
       />
       <div style = {{ paddingTop: "10vh", paddingBottom: "10vh" }}>
-        <StoryImageLeft
+        <Story
           imageData = { data.banner }
           description = { description }
+          imageLeft = {true}
         />
-        <StoryImageRight
+        <Story
           imageData = { data.banner }
           description = { description }
+          imageLeft = {false}
         />
       </div>
     </>
