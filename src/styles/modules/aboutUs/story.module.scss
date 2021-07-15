@@ -31,20 +31,28 @@
 .left-column, .right-column {
   padding: 2rem;
 
-  @include mobile {
-    padding: 0;
-  }
-
   & > p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
     color: $dark;
+    line-height: 200%;
+    text-align: justify;
+    letter-spacing: 0.3rem;
   }
 }
 .left-column {
   grid-area: left;
+
+  @include mobile {
+    padding: 5vw 0;
+  }
 }
 .right-column {
   grid-area: right;
+  
+  @include mobile {
+    padding: 5vw;
+  }
 }
 
 /******* image styles *******/

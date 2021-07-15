@@ -3,10 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import SectionBanner from '../sectionBanner';
 import Story from '../aboutUs/story';
+import { storylines } from '../../hooks/useSiteMetadata';
 
 const History = () => {
-  
-  const description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor";
 
   const data = useStaticQuery(graphql`
     query {
@@ -26,9 +25,31 @@ const History = () => {
           }
         )
       }
+      images: allImageSharp (
+        filter: {
+          original: {
+            src: {
+              regex: "/.*story.*/"
+            }
+          }
+        }  
+      ) {
+        edges {
+          node {
+            gatsbyImageData (
+              placeholder: BLURRED,
+              aspectRatio: 2.5,
+              layout: FULL_WIDTH,
+              transformOptions: {
+                fit: OUTSIDE
+              }
+            )
+          }
+        }
+      }
     }
   `);
-  
+
   return (
     <>
       <SectionBanner
@@ -37,14 +58,19 @@ const History = () => {
       />
       <div style = {{ paddingTop: "10vh", paddingBottom: "10vh" }}>
         <Story
-          imageData = { data.banner }
-          description = { description }
+          imageData = { data.images.edges[0].node }
+          description = { storylines[0] }
           imageLeft = {true}
         />
         <Story
-          imageData = { data.banner }
-          description = { description }
+          imageData = { data.images.edges[1].node }
+          description = { storylines[1] }
           imageLeft = {false}
+        />
+        <Story
+          imageData = { data.images.edges[2].node }
+          description = { storylines[2] }
+          imageLeft = {true}
         />
       </div>
     </>
