@@ -1,17 +1,20 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
+import * as storyStyles from '../../../styles/modules/aboutUs/story.module.scss';
+
 const StoryImageLeft = ({ imageData, description }) => {
   return (
-    <div>
-      <div>
+    <div className = { storyStyles.container }>
+      <div className = { storyStyles.leftColumn }>
         <GatsbyImage
+          className = { storyStyles.image }
           image = { getImage( imageData ) }
           alt = "Story Image"
         />
       </div>
 
-      <div>
+      <div className = { storyStyles.rightColumn }>
         <p>{ description }</p>
       </div>
     </div>
