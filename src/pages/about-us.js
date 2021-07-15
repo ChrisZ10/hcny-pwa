@@ -7,6 +7,7 @@ import Head from '../components/head';
 import Banner from '../components/banner';
 import Welcome from '../components/aboutUs/welcome';
 import Statement from '../components/aboutUs/statement';
+import History from '../components/aboutUs/history';
 
 const AboutUs = () => {
 
@@ -43,6 +44,7 @@ const AboutUs = () => {
       />
       <Welcome />
       <Statement />
+      <History />
     </Layout>
   );
 };

@@ -12,6 +12,7 @@ const SectionBanner = ({ imageData, title }) => {
         image = { getImage( imageData ) }
         alt = "Banner Background"
       />
+      
       <div className = { bannerStyles.container }>
         <div className = {bannerStyles.main}>
           <h1 className = { textStyles.bannerTitle }>{ title }</h1>

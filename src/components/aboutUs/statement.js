@@ -36,12 +36,17 @@ const Statement = () => {
         imageData = { data.banner }
         title = "我們的信仰"
       />
-    
+
+      {/******* 2-column grid (5:7) *******/}
       <div className = { statementStyles.container }>
+        
+        {/******* left column *******/}
         <div className = { statementStyles.leftColumn }>
           <h1>在{ title }</h1>
           <h1>我們相信</h1>
         </div>
+        
+        {/******* right column *******/}
         <div className = { statementStyles.rightColumn }>
           <p>三位一體的真神</p>
           <p>聖父是創造宇宙萬有的真神</p>
