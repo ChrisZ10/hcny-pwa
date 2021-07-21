@@ -1,61 +1,61 @@
-@import '../../base/baseline.scss';
-@import '../../base/variables.scss';
+@import "../../base/baseline.scss";
+@import "../../base/variables.scss";
 
 .container {
-    padding: 10vh 10vw;
-    display: grid;
-    grid-template-columns: 1fr;
+  padding: 10vh 10vw;
+  display: grid;
+  grid-template-columns: 1fr;
 
-    @include desktop-and-above {
-        grid-template-columns: 5fr 7fr;
-    }
+  @include desktop-and-above {
+    grid-template-columns: 5fr 7fr;
+  }
 }
 
-.left-column  {
-    padding: 2rem;
+.left-column {
+  padding: 2rem;
 
-    @include mobile {
-        padding: 0;
-        margin-bottom: 3rem;
-    }
+  @include mobile {
+    padding: 0;
+    margin-bottom: 3rem;
+  }
 
-    & > h1 {
-        font-size: 2.5rem;
-        margin: 1rem 0;
-        line-height: 100%;
-        color: $dark;
-        font-weight: normal;
-        text-align: center;
-        
-        @include desktop-and-above {
-            font-size: 3rem;
-            text-align: right;
-        }
-    }
+  & > h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    line-height: 100%;
+    color: $dark;
+    font-weight: normal;
+    text-align: center;
 
-    & > h1:nth-child(2) {
-        font-size: 5rem;
-        font-weight: bold;
+    @include desktop-and-above {
+      font-size: 3rem;
+      text-align: right;
     }
+  }
+
+  & > h1:nth-child(2) {
+    font-size: 5rem;
+    font-weight: bold;
+  }
 }
 
 .right-column {
-    @extend .left-column;
+  @extend .left-column;
+
+  @include mobile {
+    padding: 5vw 5vw 0 5vw;
+  }
+
+  & > p {
+    color: $dark;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 0;
+    margin: 1rem 0 2rem;
+    line-height: 200%;
 
     @include mobile {
-        padding: 5vw 5vw 0 5vw;
+      text-align: justify;
     }
-    
-    & > p {
-        color: $dark;
-        font-size: 1.5rem;
-        font-weight: 300;
-        padding: 0;
-        margin: 1rem 0 2rem;
-        line-height: 200%;
-
-        @include mobile {
-            text-align: justify;
-        }
-    }
+  }
 }

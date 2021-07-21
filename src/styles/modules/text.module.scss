@@ -1,49 +1,50 @@
-@import '../base/variables.scss';
-@import '../base/baseline.scss';
+@import "../base/variables.scss";
+@import "../base/baseline.scss";
 
-.title, .subtitle {
-    color: white;
-    letter-spacing: 1rem;
-    padding: 0 2rem;
-    text-align: center;
-    line-height: 100%;
+.title,
+.subtitle {
+  color: white;
+  letter-spacing: 1rem;
+  padding: 0 2rem;
+  text-align: center;
+  line-height: 100%;
 
-    @include mobile {
-        letter-spacing: 0.3rem;
-    }
+  @include mobile {
+    letter-spacing: 0.3rem;
+  }
 }
 
-.jumboTitle {   
-    @extend .title;
-    font-weight: bold;
-    margin: 0 0 3rem 0;
-    font-size: 7rem;
+.jumboTitle {
+  @extend .title;
+  font-weight: bold;
+  margin: 0 0 3rem 0;
+  font-size: 7rem;
 
-    @include mobile {
-        font-size: 6rem;
-    }
+  @include mobile {
+    font-size: 6rem;
+  }
 }
 .bannerTitle {
-    @extend .jumboTitle;
-    font-size: 5rem !important;
+  @extend .jumboTitle;
+  font-size: 5rem !important;
 
-    @include mobile {
-        font-size: 4rem !important;
-    }
+  @include mobile {
+    font-size: 4rem !important;
+  }
 }
 
 .jumboSubtitle {
-    @extend .subtitle;
-    font-weight: 200;
-    font-size: 7rem;
-    margin: 1rem 0 0 0;
+  @extend .subtitle;
+  font-weight: 200;
+  font-size: 7rem;
+  margin: 1rem 0 0 0;
 
-    @include mobile {
-        font-size: 6rem;
-    }
-}   
+  @include mobile {
+    font-size: 6rem;
+  }
+}
 .bannerSubtitle {
-    @extend .jumboSubtitle;
-    font-size: 2.5rem !important;
-    margin: 5rem 0 2rem !important;
+  @extend .jumboSubtitle;
+  font-size: 2.5rem !important;
+  margin: 5rem 0 2rem !important;
 }

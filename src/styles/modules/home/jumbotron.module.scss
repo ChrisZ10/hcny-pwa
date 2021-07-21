@@ -1,41 +1,41 @@
-@import '../../base/variables.scss';
-@import '../../base/baseline.scss';
+@import "../../base/variables.scss";
+@import "../../base/baseline.scss";
 
 .grid {
-    display: grid;
-    height: 100vh;
+  display: grid;
+  height: 100vh;
 }
 
 .background {
-    grid-area: 1 / 1;
+  grid-area: 1 / 1;
 }
 
 .container {
-    grid-area: 1 / 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  grid-area: 1 / 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
-    margin: auto;
+  margin: auto;
 }
 
 /******* button *******/
 .button-container {
-    display: flex;
+  display: flex;
 }
 .button {
-    text-decoration: none;
-    background-color: white;
-    border-radius: 3rem;
-    padding: 1rem 2rem;
-    margin: auto;
-    font-size: 1.5rem;
-    letter-spacing: 0.5rem;
-    color: $dark;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  margin: auto;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  color: $dark;
 
-    &:hover {
-        color: $primary;
-    }
+  &:hover {
+    color: $primary;
+  }
 }

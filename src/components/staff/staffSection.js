@@ -6,7 +6,7 @@ const StaffSection = ({ title, children }) => {
   return (
     <div className = { staffSectionStyles.container }>
       <h1>{ title }</h1>
-      <div>
+      <div className = { staffSectionStyles.grid }>
         { children }
       </div>
     </div>

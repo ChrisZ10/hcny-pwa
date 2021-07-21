@@ -1,104 +1,104 @@
-@import '../../base/baseline.scss';
-@import '../../base/variables.scss';
+@import "../../base/baseline.scss";
+@import "../../base/variables.scss";
 
 .container {
-    padding: 10vh 10vw;
-    display: grid;
-    grid-template-columns: 1fr;
+  padding: 10vh 10vw;
+  display: grid;
+  grid-template-columns: 1fr;
 
-    @include desktop-and-above {
-        grid-template-columns: 7fr 5fr;
-    }
+  @include desktop-and-above {
+    grid-template-columns: 7fr 5fr;
+  }
 }
 
 /******* left column *******/
 .left-column {
-    padding: 3rem;
+  padding: 3rem;
 
-    @include mobile {
-        padding: 0;
-        margin-bottom: 3rem;
-    }
+  @include mobile {
+    padding: 0;
+    margin-bottom: 3rem;
+  }
 }
 .cover {
-    border-radius: 3rem;
-    box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
+  border-radius: 3rem;
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
 }
 
 /******* right column *******/
 .right-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    @include desktop-and-above {
-        margin-left: 2rem;
+  @include desktop-and-above {
+    margin-left: 2rem;
+  }
+
+  & > p {
+    margin: 0;
+    letter-spacing: 0.3rem;
+    color: $dark;
+
+    @include tablet {
+      text-align: center;
     }
-
-    & > p {
-        margin: 0;
-        letter-spacing: 0.3rem;
-        color: $dark;
-
-        @include tablet {
-            text-align: center;
-        }
-        @include mobile {
-            line-height: 150%;
-            text-align: center;
-            letter-spacing: 0; 
-        }
+    @include mobile {
+      line-height: 150%;
+      text-align: center;
+      letter-spacing: 0;
     }
+  }
 }
 
 /******* typography *******/
 $size: 3.5rem;
 .title {
-    font-size: calc(#{$size});
-    font-weight: bold;
+  font-size: calc(#{$size});
+  font-weight: bold;
 }
 .subtitle {
-    font-size: calc(#{$size} * 0.4);
+  font-size: calc(#{$size} * 0.4);
 }
 .speaker {
-    font-size: calc(#{$size} * 0.7);
+  font-size: calc(#{$size} * 0.7);
 }
 
 /******* button group *******/
 .button-container {
-    display: flex;
-    margin-top: 2rem;
+  display: flex;
+  margin-top: 2rem;
 
-    @include tablet {
-        margin: 2rem auto;
-    }
-    @include mobile {
-        margin: 2rem auto 1rem;
-    }
+  @include tablet {
+    margin: 2rem auto;
+  }
+  @include mobile {
+    margin: 2rem auto 1rem;
+  }
 
-    /******* general button style *******/
-    & > a {
-        margin-right: 1rem;
-        padding: 0.5rem 0.5rem 0.5rem 1rem;
-        text-decoration: none;
-        font-size: 1.5rem;
-        letter-spacing: 0.5rem;
-        border: $primary solid 3px;
-        border-radius: 3rem;
-    }
+  /******* general button style *******/
+  & > a {
+    margin-right: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    border: $primary solid 3px;
+    border-radius: 3rem;
+  }
 }
-.button {    
-    background-color: $primary;
-    color: white;
+.button {
+  background-color: $primary;
+  color: white;
 
-    &:hover {
-        color: $dark;
-    }
+  &:hover {
+    color: $dark;
+  }
 }
 .button-hollow {
-    color: $primary;
+  color: $primary;
 
-    &:hover {
-        color: $dark;
-    }
+  &:hover {
+    color: $dark;
+  }
 }

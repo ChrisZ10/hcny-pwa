@@ -1,14 +1,15 @@
-@import '../../base/baseline.scss';
-@import '../../base/variables.scss';
+@import "../../base/baseline.scss";
+@import "../../base/variables.scss";
 
 /******* container styles *******/
-.container-image-left, .container-image-right {
+.container-image-left,
+.container-image-right {
   padding: 0 10vw;
   display: grid;
   grid-template-columns: 1fr;
 
   // use grid-area to adjust column order in mobile view
-  grid-template-areas: 
+  grid-template-areas:
     "left"
     "right";
 
@@ -19,7 +20,7 @@
 .container-image-left {
   @include desktop-and-above {
     grid-template-areas: "left right";
-  }  
+  }
 }
 .container-image-right {
   @include desktop-and-above {
@@ -28,7 +29,8 @@
 }
 
 /******* column styles *******/
-.left-column, .right-column {
+.left-column,
+.right-column {
   padding: 2rem;
 
   & > p {
@@ -49,7 +51,7 @@
 }
 .right-column {
   grid-area: right;
-  
+
   @include mobile {
     padding: 5vw;
   }

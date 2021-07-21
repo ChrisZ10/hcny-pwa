@@ -13,7 +13,7 @@ const Staff = () => {
       banner: imageSharp (
         original: {
           src: {
-            regex: "/.*staff.*/"
+            regex: "/.*staff-banner.*/"
           }
         }
       ) {

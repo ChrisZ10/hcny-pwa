@@ -1,185 +1,185 @@
-@import '../base/variables.scss';
-@import '../base/baseline.scss';
+@import "../base/variables.scss";
+@import "../base/baseline.scss";
 
 .header {
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 1;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
 }
 
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 12vh;
-    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 12vh;
+  box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
-    @include mobile {
-        padding-left: 10%;
-        padding-right: 10%;
-        justify-content: space-between;
-    }
+  @include mobile {
+    padding-left: 10%;
+    padding-right: 10%;
+    justify-content: space-between;
+  }
 }
 
 .nav-brand {
-    @include mobile {
-        width: 50px;
-        height: 50px;
-    }
-    
-    &:hover {
-        cursor: pointer;
-    }
+  @include mobile {
+    width: 50px;
+    height: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 /******* navbar styles *******/
 .navbar {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+
+  & > li {
+    list-style: none;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  @include mobile {
+    position: absolute;
+    left: 0;
+    top: 12vh;
+    width: 100%;
+    padding: 1rem 0 1rem 1rem;
     display: flex;
-    margin: 0;
-    padding: 0;
-    justify-content: space-around;
-
-    & > li {
-        list-style: none;
-        margin: 1rem;
-        padding: 0.5rem;
-    }
-
-    @include mobile {
-        position: absolute;
-        left: 0;
-        top: 12vh;
-        width: 100%;
-        padding: 1rem 0 1rem 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        background-color: white;
-        box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-    }
+    flex-direction: column;
+    align-items: left;
+    background-color: white;
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+  }
 }
 .navbar-active {
-    @extend .navbar;
-    visibility: visible;
+  @extend .navbar;
+  visibility: visible;
 }
 
 /******* navbar item styles *******/
 .navbar-item {
-    & > * {
-        text-decoration: none;
-        letter-spacing: 3px;
-        color: $dark;
-        font-size: 1.2rem;
+  & > * {
+    text-decoration: none;
+    letter-spacing: 3px;
+    color: $dark;
+    font-size: 1.2rem;
 
-        @include mobile {
-            font-size: 1.5rem;
-        }
+    @include mobile {
+      font-size: 1.5rem;
     }
-    
-    &:hover {
-        * {
-            color: $primary;
-        }
+  }
+
+  &:hover {
+    * {
+      color: $primary;
     }
+  }
 }
 
 /******* chevron styles *******/
 .chevron {
-    width: 1.4rem;
-    height: 1.4rem;
-    position: relative;
-    top: 0.3rem;
-    margin-left: 0.3rem;
-    text-align: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  position: relative;
+  top: 0.3rem;
+  margin-left: 0.3rem;
+  text-align: center;
 
-    @include mobile {
-        float: right;
-        margin-right: 2rem;
-        padding: 0;
-    }
+  @include mobile {
+    float: right;
+    margin-right: 2rem;
+    padding: 0;
+  }
 }
 
 /******* menu burger styles *******/
-.burger { 
-    display: none;
+.burger {
+  display: none;
 
-    & > div {
-        width: 25px;
-        height: 3px;
-        background-color: $dark;
-        margin: 5px;
-    }
+  & > div {
+    width: 25px;
+    height: 3px;
+    background-color: $dark;
+    margin: 5px;
+  }
 
-    @include mobile {
-        display: block;
-    }
+  @include mobile {
+    display: block;
+  }
 }
 .burger-toggle {
-    @extend .burger;
+  @extend .burger;
 
-    & .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    & .line2 {
-        opacity: 0;
-    }
-    & .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+  & .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  & .line2 {
+    opacity: 0;
+  }
+  & .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
 
 /******* dropdown styles *******/
 .navbar-dropdown {
-    position: absolute;
-    top: 8vh;
-    padding: 1rem;
-    background-color: $primary;
-    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
-    visibility: hidden;
+  position: absolute;
+  top: 8vh;
+  padding: 1rem;
+  background-color: $primary;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
 
-    li {
-        list-style: none;
-        margin: 1rem;
-        font-size: 1.2rem;
-
-        @include mobile {
-            font-size: 1.5rem;
-        }
-    }
-}
-.navbar-dropdown-active {
-    @extend .navbar-dropdown;
-    visibility: visible;
+  li {
+    list-style: none;
+    margin: 1rem;
+    font-size: 1.2rem;
 
     @include mobile {
-        position: static;
-        background-color: white;
-        box-shadow: none;
-        margin: -0.5rem 0 -3rem 0;
+      font-size: 1.5rem;
     }
+  }
+}
+.navbar-dropdown-active {
+  @extend .navbar-dropdown;
+  visibility: visible;
+
+  @include mobile {
+    position: static;
+    background-color: white;
+    box-shadow: none;
+    margin: -0.5rem 0 -3rem 0;
+  }
 }
 
 /******* dropdown item styles *******/
 .navbar-dropdown-item {
-    color: white;
-    text-decoration: none;
-    letter-spacing: 0.2rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+
+  &:hover {
+    color: $dark;
+  }
+
+  @include mobile {
+    color: $dark;
 
     &:hover {
-        color: $dark;
+      color: $primary;
     }
-
-    @include mobile {
-        color: $dark;
-
-        &:hover {
-            color: $primary;
-        }
-    }
+  }
 }
