@@ -5,7 +5,7 @@ import * as staffSectionStyles from '../../styles/modules/staff/staffSection.mod
 const StaffSection = ({ title, children }) => {
   return (
     <div className = { staffSectionStyles.container }>
-      <h1>{ title }</h1>
+      <h1 className = { staffSectionStyles.title }>{ title }</h1>
       <div className = { staffSectionStyles.grid }>
         { children }
       </div>
