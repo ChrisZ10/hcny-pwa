@@ -2,7 +2,14 @@
 @import "../../base/variables.scss";
 
 .container {
-  min-height: 300px;
+  margin: 0;
+  padding: 0;
+}
+.container:first-child {
+  margin-top: 5vh;
+}
+.container:last-child {
+  margin-bottom: 5vh;
 }
 
 .grid {
@@ -10,6 +17,14 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   place-items: center;
+  padding: 3vh 10vw 10vh;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }
 
 .title {

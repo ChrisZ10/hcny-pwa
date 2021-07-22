@@ -1,0 +1,23 @@
+@import "../../base/baseline.scss";
+@import "../../base/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: $dark;
+  text-align: center;
+  font-weight: 500;
+  margin-top: -1vh;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: $dark;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 0;
+}

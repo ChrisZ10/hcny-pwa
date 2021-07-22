@@ -39,35 +39,37 @@ const Staff = () => {
         title = "教會牧者和同工團隊"
       />
 
-      <StaffSection title = "教牧團">
-        {pastors.map( pastor => {
-          return <SingleStaff 
-            name = { pastor.name } 
-            title = { pastor.title }
-            gender = { pastor.gender }
-          />;
-        })}
-      </StaffSection>
-      
-      <StaffSection title = "理事會">
-        {directors.map( director => {
-          return <SingleStaff 
-            name = { director.name } 
-            title = { director.title }
-            gender = { director.gender }
-          />;
-        })}
-      </StaffSection>
-      
-      <StaffSection title = "其它主要同工">
-        {coworkers.map( coworker => {
-          return <SingleStaff 
-            name = { coworker.name } 
-            title = { coworker.title }
-            gender = { coworker.gender }
-          />;
-        })}
-      </StaffSection>
+      <div style = {{marginTop: "150px"}}>
+        <StaffSection title = "教牧團">
+          {pastors.map( pastor => {
+            return <SingleStaff 
+              name = { pastor.name } 
+              title = { pastor.title }
+              gender = { pastor.gender }
+            />;
+          })}
+        </StaffSection>
+        
+        <StaffSection title = "理事會">
+          {directors.map( director => {
+            return <SingleStaff 
+              name = { director.name } 
+              title = { director.title }
+              gender = { director.gender }
+            />;
+          })}
+        </StaffSection>
+        
+        <StaffSection title = "其它主要同工">
+          {coworkers.map( coworker => {
+            return <SingleStaff 
+              name = { coworker.name } 
+              title = { coworker.title }
+              gender = { coworker.gender }
+            />;
+          })}
+        </StaffSection>
+      </div>
     </Layout>
   );
 };
