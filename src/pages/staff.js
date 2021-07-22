@@ -5,6 +5,8 @@ import Layout from '../components/layout';
 import Head from '../components/head';
 import Banner from '../components/banner';
 import StaffSection from '../components/staff/staffSection';
+import SingleStaff from '../components/staff/singleStaff';
+import { pastors, directors, coworkers } from '../hooks/useSiteMetadata';
 
 const Staff = () => {
   
@@ -36,22 +38,35 @@ const Staff = () => {
         imageData = { data.banner } 
         title = "教會牧者和同工團隊"
       />
+
       <StaffSection title = "教牧團">
-        <div><h3>Pastor-1</h3></div>
-        <div><h3>Pastor-2</h3></div>
-        <div><h3>Pastor-3</h3></div>
+        {pastors.map( pastor => {
+          return <SingleStaff 
+            name = { pastor.name } 
+            title = { pastor.title }
+            gender = { pastor.gender }
+          />;
+        })}
       </StaffSection>
+      
       <StaffSection title = "理事會">
-        <div><h3>Board-1</h3></div>
-        <div><h3>Board-2</h3></div>
-        <div><h3>Board-3</h3></div>
-        <div><h3>Board-4</h3></div>
+        {directors.map( director => {
+          return <SingleStaff 
+            name = { director.name } 
+            title = { director.title }
+            gender = { director.gender }
+          />;
+        })}
       </StaffSection>
+      
       <StaffSection title = "其它主要同工">
-        <div><h3>Staff-1</h3></div>
-        <div><h3>Staff-2</h3></div>
-        <div><h3>Staff-3</h3></div>
-        <div><h3>Staff-4</h3></div>
+        {coworkers.map( coworker => {
+          return <SingleStaff 
+            name = { coworker.name } 
+            title = { coworker.title }
+            gender = { coworker.gender }
+          />;
+        })}
       </StaffSection>
     </Layout>
   );
