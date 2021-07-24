@@ -1,8 +1,13 @@
 import React from 'react';
 
+import Layout from '../components/layout';
+import Head from '../components/head';
+
 const ContactUs = () => {
   return (
-    <div>Contact Us</div>
+    <Layout>
+      <Head subtitle = "联系我們"/>
+    </Layout>
   );
 };
 
