@@ -14,3 +14,5 @@ const MyTextInput = ({ label, ...props }) => {
     </>
   );
 };
+
+export default MyTextInput;
