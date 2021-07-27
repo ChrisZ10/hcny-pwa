@@ -33,9 +33,10 @@ const ContactForm = () => {
           message: Yup.string()
             .required("Required")
         })}
-        onSubmit = {(values, { setSubmitting }) => {
-          alert(values.firstName);
+        onSubmit = {(values, { setSubmitting, resetForm }) => {
+          console.log(values);
           setSubmitting(false);
+          resetForm();
         }}
       >
         <Form>
@@ -66,6 +67,8 @@ const ContactForm = () => {
           <MyTextArea
             label = "Message"
             name = "message"
+            type = "text"
+            placeholder = "Your Message"
           />
           <button type = "submit">Submit</button>
         </Form>
