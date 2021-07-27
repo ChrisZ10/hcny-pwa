@@ -2,11 +2,43 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
+import hcnyApi from '../api/hcny';
 import MyTextInput from '../components/form/MyTextInput';
 import MyTextArea from './form/MyTextArea';
 
 const ContactForm = () => {
   const regex = /(\d{3})-(\d{3})-(\d{4})/;
+
+  const sendDataToEmail = async (values) => {
+    const firstName = values.firstName;
+    const lastName = values.lastName;
+    const email = values.email;
+    const phone = values.phone || "";
+    const message = values.message;
+
+    try {
+      const res = await hcnyApi.post('/api/v1/contact', { firstName, lastName, email, phone, message });
+      if (res.data.success) {
+        return true;
+      }
+      return false;
+    } catch (err) {
+      return false;
+    }
+  };
+
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    console.log(values);
+    const isSuccessful = sendDataToEmail(values);
+    if (isSuccessful) {
+      setSubmitting(false);
+      resetForm();
+      alert("Successfully Submitted");
+    } else {
+      alert("Submission Failed");
+    }
+  };
+
   return (
     <>
       <h1 style = {{marginTop: "200px"}}>聯繫我們</h1>
@@ -33,11 +65,7 @@ const ContactForm = () => {
           message: Yup.string()
             .required("Required")
         })}
-        onSubmit = {(values, { setSubmitting, resetForm }) => {
-          console.log(values);
-          setSubmitting(false);
-          resetForm();
-        }}
+        onSubmit = { handleSubmit }
       >
         <Form>
           <MyTextInput
