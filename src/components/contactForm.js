@@ -3,9 +3,10 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import MyTextInput from '../components/form/MyTextInput';
+import MyTextArea from './form/MyTextArea';
 
 const ContactForm = () => {
-  const regex = /\((\d{3})\)(\d{3})-(\d{4})/;
+  const regex = /(\d{3})-(\d{3})-(\d{4})/;
   return (
     <>
       <h1 style = {{marginTop: "200px"}}>聯繫我們</h1>
@@ -15,7 +16,7 @@ const ContactForm = () => {
           lastName: "",
           email: "",
           phone: "",
-          //message: ""
+          message: ""
         }}
         validationSchema = { Yup.object({
           firstName: Yup.string()
@@ -29,8 +30,8 @@ const ContactForm = () => {
             .required("Required"),
           phone: Yup.string()
             .matches(regex, "Invalid phone number"),
-          //message: Yup.string()
-            //.required("Required")
+          message: Yup.string()
+            .required("Required")
         })}
         onSubmit = {(values, { setSubmitting }) => {
           alert(values.firstName);
@@ -61,6 +62,10 @@ const ContactForm = () => {
             name = "phone"
             type = "text"
             placeholder = "Your Phone Number"
+          />
+          <MyTextArea
+            label = "Message"
+            name = "message"
           />
           <button type = "submit">Submit</button>
         </Form>
