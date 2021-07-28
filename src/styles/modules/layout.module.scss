@@ -10,3 +10,11 @@
 .main {
   flex-grow: 1;
 }
+
+.form-container {
+  padding: 10vh 10vw;
+
+  @include desktop-and-above {
+    padding: 10vh 20vw;
+  }
+}

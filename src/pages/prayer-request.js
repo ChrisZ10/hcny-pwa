@@ -4,6 +4,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Head from '../components/head';
 import Banner from '../components/banner';
+import PrayerRequestForm from '../components/prayerRequestForm';
+import * as layoutStyles from '../styles/modules/layout.module.scss';
 
 const PrayerRequest = () => {
 
@@ -35,6 +37,9 @@ const PrayerRequest = () => {
         imageData = { data.banner } 
         title = "尋求代禱"
       />
+      <div className = { layoutStyles.formContainer }>
+        <PrayerRequestForm />
+      </div>
     </Layout>
   );
 };
