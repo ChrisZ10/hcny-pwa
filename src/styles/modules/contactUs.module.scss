@@ -1,0 +1,11 @@
+@import "../base/baseline.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10vh 10vw;
+
+  @include desktop-and-above {
+    grid-template-columns: 2fr 1fr;
+  }
+}
