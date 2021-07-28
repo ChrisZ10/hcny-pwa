@@ -28,14 +28,13 @@ const ContactForm = () => {
   };
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    console.log(values);
     const isSuccessful = sendDataToEmail(values);
     if (isSuccessful) {
       setSubmitting(false);
       resetForm();
-      alert("Successfully Submitted");
+      alert("提交成功");
     } else {
-      alert("Submission Failed");
+      alert("提交失敗");
     }
   };
 
@@ -52,53 +51,53 @@ const ContactForm = () => {
         }}
         validationSchema = { Yup.object({
           firstName: Yup.string()
-            .max(15, "Must be 15 characters or less")
-            .required("Required"),
+            .max(15, "請填寫最多15個字符")
+            .required("必填"),
           lastName: Yup.string()
-            .max(20, "Must be 20 characters or less")
-            .required("Required"),
+            .max(20, "請填寫最多20個字符")
+            .required("必填"),
           email: Yup.string()
-            .email("Invalid email address")
-            .required("Required"),
+            .email("請填寫有效的郵箱地址")
+            .required("必填"),
           phone: Yup.string()
-            .matches(regex, "Invalid phone number"),
+            .matches(regex, "請填寫有效的電話號碼"),
           message: Yup.string()
-            .required("Required")
+            .required("必填")
         })}
         onSubmit = { handleSubmit }
       >
         <Form>
           <MyTextInput
-            label = "First Name"
-            name = "firstName"
-            type = "text"
-            placeholder = "Your First Name"
-          />
-          <MyTextInput
-            label = "Last Name"
+            label = "姓氏"
             name = "lastName"
             type = "text"
-            placeholder = "Your Last Name"
+            placeholder = "您的姓氏"
           />
           <MyTextInput
-            label = "Email"
+            label = "名字"
+            name = "firstName"
+            type = "text"
+            placeholder = "您的名字"
+          />
+          <MyTextInput
+            label = "電子郵箱"
             name = "email"
             type = "text"
-            placeholder = "Your Email"
+            placeholder = "您的電子郵箱"
           />
           <MyTextInput
-            label = "Phone Number"
+            label = "電話號碼"
             name = "phone"
             type = "text"
-            placeholder = "Your Phone Number"
+            placeholder = "您的電話號碼（格式：###-###-####）"
           />
           <MyTextArea
-            label = "Message"
+            label = "留言"
             name = "message"
             type = "text"
-            placeholder = "Your Message"
+            placeholder = "您的留言"
           />
-          <button type = "submit">Submit</button>
+          <button type = "submit">提交</button>
         </Form>
       </Formik>
     </>
