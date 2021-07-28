@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import hcnyApi from '../api/hcny';
 import MyTextInput from '../components/form/MyTextInput';
 import MyTextArea from './form/MyTextArea';
+import * as formStyles from '../styles/modules/form.module.scss';
 
 const ContactForm = () => {
   const regex = /(\d{3})-(\d{3})-(\d{4})/;
@@ -40,7 +41,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <h1 style = {{marginTop: "200px"}}>聯繫我們</h1>
+      <h1 className = { formStyles.title }>聯繫我們</h1>
       <Formik
         initialValues = {{
           firstName: "",
@@ -86,10 +87,10 @@ const ContactForm = () => {
             placeholder = "您的電子郵箱"
           />
           <MyTextInput
-            label = "電話號碼"
+            label = "電話號碼（格式：###-###-####）"
             name = "phone"
             type = "text"
-            placeholder = "您的電話號碼（格式：###-###-####）"
+            placeholder = "您的電話號碼"
           />
           <MyTextArea
             label = "留言"
@@ -97,7 +98,7 @@ const ContactForm = () => {
             type = "text"
             placeholder = "您的留言"
           />
-          <button type = "submit">提交</button>
+          <button className = { formStyles.submit } type = "submit">提交</button>
         </Form>
       </Formik>
     </>

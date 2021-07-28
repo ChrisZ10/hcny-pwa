@@ -1,15 +1,26 @@
 import React from 'react';
 import { useField } from 'formik';
 
+import * as formStyles from '../../styles/modules/form.module.scss';
+
 const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
     <>
-      <label htmlFor = { props.id || props.name }>{ label }</label>
-      <input { ...field } { ...props }/>
+      <label 
+        htmlFor = { props.id || props.name }
+        className = { formStyles.label }
+      >
+        { label }
+      </label>
+      <input 
+        { ...field } 
+        { ...props }
+        className = { formStyles.input }
+      />
       {meta.touched && meta.error? (
-        <div>{ meta.error }</div>
+        <div className = { formStyles.error }>{ meta.error }</div>
       ) : null}
     </>
   );
