@@ -18,7 +18,7 @@ const ContactForm = () => {
     const message = values.message;
 
     try {
-      const res = await hcnyApi.post('/api/v1/contact', { firstName, lastName, email, phone, message });
+      const res = await hcnyApi.post('/api/v1/contact-form', { firstName, lastName, email, phone, message });
       if (res.data.success) {
         return true;
       }

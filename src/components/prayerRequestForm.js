@@ -18,7 +18,7 @@ const PrayerRequestForm = () => {
     const prayerRequest = values.prayerRequest;
 
     try {
-      const res = await hcnyApi.post('/api/v1/prayer', { firstName, lastName, email, phone, prayerRequest });
+      const res = await hcnyApi.post('/api/v1/prayer-request-form', { firstName, lastName, email, phone, prayerRequest });
       if (res.data.success) {
         return true;
       }
@@ -48,7 +48,7 @@ const PrayerRequestForm = () => {
           lastName: "",
           email: "",
           phone: "",
-          message: ""
+          prayerRequest: ""
         }}
         validationSchema = { Yup.object({
           firstName: Yup.string()
@@ -62,7 +62,7 @@ const PrayerRequestForm = () => {
             .required("必填"),
           phone: Yup.string()
             .matches(regex, "請填寫有效的電話號碼"),
-          message: Yup.string()
+          prayerRequest: Yup.string()
             .required("必填")
         })}
         onSubmit = { handleSubmit }
