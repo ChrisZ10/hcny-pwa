@@ -69,19 +69,19 @@ const ContactForm = () => {
       >
         <Form>
           <MyTextInput
-            label = "姓氏"
+            label = "姓氏*"
             name = "lastName"
             type = "text"
             placeholder = "您的姓氏"
           />
           <MyTextInput
-            label = "名字"
+            label = "名字*"
             name = "firstName"
             type = "text"
             placeholder = "您的名字"
           />
           <MyTextInput
-            label = "電子郵箱"
+            label = "電子郵箱*"
             name = "email"
             type = "text"
             placeholder = "您的電子郵箱"
@@ -93,7 +93,7 @@ const ContactForm = () => {
             placeholder = "您的電話號碼"
           />
           <MyTextArea
-            label = "留言"
+            label = "留言*"
             name = "message"
             type = "text"
             placeholder = "您的留言"

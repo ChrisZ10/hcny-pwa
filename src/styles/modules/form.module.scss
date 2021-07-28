@@ -1,3 +1,4 @@
+@import "../base/baseline.scss";
 @import "../base/variables.scss";
 
 .label {
@@ -6,6 +7,10 @@
   font-weight: 300;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
 }
 
 .textarea, .input {
@@ -19,6 +24,10 @@
   border: 1px solid $light;
   border-radius: 1rem;
   width: 100%;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
 }
 
 .error {

@@ -3,18 +3,47 @@
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 10vh 10vw;
+  padding: 15vh 10vw;
 
   @include desktop-and-above {
     grid-template-columns: 2fr 1fr;
+    padding: 25vh 10vw;
+  }
+}
+
+.left-column {
+  margin-bottom: 5vh;
+
+  @include desktop-and-above {
+    margin-right: 5vw;
+    margin-bottom: 0;
+  }
+}
+
+.right-column {
+  h1 {
+    color: $primary;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  h3 {
+    color: $dark;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 0;
   }
 }
 
 .map {
+  margin-top: 3rem;
   margin-bottom: 3rem;
   padding-top: 66.67%;
   filter: grayscale(100%);
   border-radius: 3rem;
   box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
   overflow: "hidden";
+
+  @include mobile {
+    margin-bottom: 1rem;
+  }
 }
