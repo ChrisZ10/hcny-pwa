@@ -24,7 +24,8 @@ const PrayerRequest = () => {
           layout: FULL_WIDTH,
           transformOptions: {
             fit: OUTSIDE
-          }
+          },
+          quality: 90
         )
       }
     }

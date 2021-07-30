@@ -26,6 +26,7 @@ const Staff = () => {
           transformOptions: {
             fit: OUTSIDE
           }
+          quality: 90
         )
       }
     }

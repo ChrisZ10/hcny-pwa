@@ -38,6 +38,7 @@ const Jumbotron = () => {
         alt = "wheat"
         layout = "fullWidth"
         placeholder = "blurred"
+        quality = {90}
       />
 
       <div className = { jumbotronStyles.container }>

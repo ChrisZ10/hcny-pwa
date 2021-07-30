@@ -17,6 +17,7 @@ const Welcome = () => {
           layout = "constrained"
           aspectRatio = {3/4}
           className = { welcomeStyles.cover }
+          quality = {90}
         />
       </div>
       

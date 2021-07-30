@@ -27,6 +27,7 @@ const AboutUs = () => {
           transformOptions: {
             fit: OUTSIDE
           }
+          quality: 90
         )
       }
     }

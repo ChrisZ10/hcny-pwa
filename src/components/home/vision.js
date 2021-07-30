@@ -16,6 +16,7 @@ const Vision = () => {
         alt = "glorious"
         layout = "fullWidth"
         placeholder = "blurred"
+        quality = {90}
       />
 
       <div className = { visionStyles.container }>

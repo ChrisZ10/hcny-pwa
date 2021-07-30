@@ -22,7 +22,8 @@ const History = () => {
           layout: FULL_WIDTH,
           transformOptions: {
             fit: OUTSIDE
-          }
+          },
+          quality: 90
         )
       }
       images: allImageSharp (
@@ -42,7 +43,8 @@ const History = () => {
               layout: FULL_WIDTH,
               transformOptions: {
                 fit: OUTSIDE
-              }
+              },
+              quality: 90
             )
           }
         }
