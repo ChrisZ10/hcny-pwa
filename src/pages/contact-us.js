@@ -3,7 +3,7 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import ContactForm from '../components/contactForm';
+import ContactForm from '../components/form/contactForm';
 import * as contactUsStyles from '../styles/modules/contactUs.module.scss';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 

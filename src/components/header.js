@@ -46,7 +46,7 @@ const Header = () => {
             }}
           >
             <div className = { headerStyles.navbarItem }>
-              <Link to = "#new-friends" >新朋友？</Link>
+              <Link to = "/new-friends" >新朋友？</Link>
               <BsChevronDown 
                 className = { headerStyles.chevron }
                 onClick = {() => {

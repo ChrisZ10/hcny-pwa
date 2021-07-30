@@ -1,20 +1,21 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import Layout from '../components/layout';
 import Head from '../components/head';
 import Banner from '../components/banner';
-import PrayerRequestForm from '../components/form/prayerRequestForm';
-import * as layoutStyles from '../styles/modules/layout.module.scss';
+import Welcome from '../components/aboutUs/welcome';
+import GetInvolved from '../components/newFriends/getInvolved';
 
-const PrayerRequest = () => {
+const NewFriends = () => {
 
   const data = useStaticQuery(graphql`
     query {      
       banner: imageSharp (
         original: {
           src: {
-            regex: "/.*pray.*/"
+            regex: "/.*church.*/"
           }
         }
       ) {
@@ -24,25 +25,27 @@ const PrayerRequest = () => {
           layout: FULL_WIDTH,
           transformOptions: {
             fit: OUTSIDE
-          },
+          }
           quality: 90
         )
       }
     }
   `);
 
+  const { title, slogan } = useSiteMetadata();
+
   return (
     <Layout>
-      <Head subtitle = "尋求代禱" />
+      <Head subtitle = "新朋友"/>
       <Banner 
         imageData = { data.banner } 
-        title = "尋求代禱"
+        title = { title }
+        subtitle = { slogan } 
       />
-      <div className = { layoutStyles.formContainer }>
-        <PrayerRequestForm />
-      </div>
+      <Welcome />
+      <GetInvolved />
     </Layout>
   );
 };
 
-export default PrayerRequest;
+export default NewFriends;

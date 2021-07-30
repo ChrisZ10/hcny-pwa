@@ -2,12 +2,12 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
-import hcnyApi from '../api/hcny';
-import MyTextInput from '../components/form/MyTextInput';
-import MyTextArea from './form/MyTextArea';
-import * as formStyles from '../styles/modules/form.module.scss';
+import hcnyApi from '../../api/hcny';
+import MyTextInput from './MyTextInput';
+import MyTextArea from './MyTextArea';
+import * as formStyles from '../../styles/modules/form.module.scss';
 
-const ContactForm = () => {
+const PrayerRequestForm = () => {
   const regex = /(\d{3})-(\d{3})-(\d{4})/;
 
   const sendDataToEmail = async (values) => {
@@ -15,10 +15,10 @@ const ContactForm = () => {
     const lastName = values.lastName;
     const email = values.email;
     const phone = values.phone || "";
-    const message = values.message;
+    const prayerRequest = values.prayerRequest;
 
     try {
-      const res = await hcnyApi.post('/api/v1/contact-form', { firstName, lastName, email, phone, message });
+      const res = await hcnyApi.post('/api/v1/prayer-request-form', { firstName, lastName, email, phone, prayerRequest });
       if (res.data.success) {
         return true;
       }
@@ -41,14 +41,14 @@ const ContactForm = () => {
 
   return (
     <>
-      <h1 className = { formStyles.title }>聯繫我們</h1>
+      <h1 className = { formStyles.title }>代禱卡</h1>
       <Formik
         initialValues = {{
           firstName: "",
           lastName: "",
           email: "",
           phone: "",
-          message: ""
+          prayerRequest: ""
         }}
         validationSchema = { Yup.object({
           firstName: Yup.string()
@@ -62,7 +62,7 @@ const ContactForm = () => {
             .required("必填"),
           phone: Yup.string()
             .matches(regex, "請填寫有效的電話號碼"),
-          message: Yup.string()
+          prayerRequest: Yup.string()
             .required("必填")
         })}
         onSubmit = { handleSubmit }
@@ -93,10 +93,10 @@ const ContactForm = () => {
             placeholder = "您的電話號碼"
           />
           <MyTextArea
-            label = "留言*"
-            name = "message"
+            label = "代禱事項*"
+            name = "prayerRequest"
             type = "text"
-            placeholder = "您的留言"
+            placeholder = "您的代禱事項"
           />
           <button className = { formStyles.submit } type = "submit">提交</button>
         </Form>
@@ -105,4 +105,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default PrayerRequestForm;
