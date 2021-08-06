@@ -10,7 +10,7 @@ const GetInvolved = () => {
       banner: imageSharp (
         original: {
           src: {
-            regex: "/.*sanctuary.*/"
+            regex: "/.*sanctuary-2.*/"
           }
         }
       ) {
@@ -27,10 +27,15 @@ const GetInvolved = () => {
     }
   `);
 
+  const subtitle = "您可以通過以下幾種方式";
+  const title = "參與到教會中來"
+
   return (
     <>
       <SectionBanner
         imageData = { data.banner }
+        subtitle = { subtitle }
+        title = { title }
       />
     </>
   );
