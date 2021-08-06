@@ -23,6 +23,7 @@
     "gatsby-plugin-sharp": "^3.7.0",
     "gatsby-source-filesystem": "^3.7.0",
     "gatsby-source-graphql": "^3.11.0",
+    "gatsby-source-mongodb": "^3.11.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "google-maps-react": "^2.0.6",
     "react": "^17.0.1",
