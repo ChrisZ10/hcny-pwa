@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SectionBanner from '../sectionBanner';
-import Story from '../aboutUs/story';
+import Box from '../box';
 import { storylines } from '../../hooks/useSiteMetadata';
 
 const History = () => {
@@ -59,21 +59,15 @@ const History = () => {
         title = "我們的故事"
       />
       <div style = {{ paddingTop: "10vh", paddingBottom: "10vh" }}>
-        <Story
-          imageData = { data.images.edges[0].node }
-          description = { storylines[0] }
-          imageLeft = {true}
-        />
-        <Story
-          imageData = { data.images.edges[1].node }
-          description = { storylines[1] }
-          imageLeft = {false}
-        />
-        <Story
-          imageData = { data.images.edges[2].node }
-          description = { storylines[2] }
-          imageLeft = {true}
-        />
+        <Box imageData = { data.images.edges[0].node } isImageLeft = {true}>
+          <p>{ storylines[0] }</p>
+        </Box>
+        <Box imageData = { data.images.edges[1].node } isImageLeft = {false}>
+          <p>{ storylines[1] }</p>
+        </Box>
+        <Box imageData = { data.images.edges[2].node } isImageLeft = {true}>
+          <p>{ storylines[2] }</p>
+        </Box>
       </div>
     </>
   );

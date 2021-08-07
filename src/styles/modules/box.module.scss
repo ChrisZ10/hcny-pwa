@@ -1,0 +1,64 @@
+@import "../base/baseline.scss";
+@import "../base/variables.scss";
+
+/******* container styles *******/
+.container-with-image-left,
+.container-with-image-right {
+  padding: 0 10vw;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  // use grid-area to adjust column order in mobile view
+  grid-template-areas:
+    "left"
+    "right";
+
+  @include desktop-and-above {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.container-with-image-left {
+  @include desktop-and-above {
+    grid-template-areas: "left right";
+  }
+}
+.container-with-image-right {
+  @include desktop-and-above {
+    grid-template-areas: "right left";
+  }
+}
+
+/******* column styles *******/
+.left-column,
+.right-column {
+  padding: 2rem;
+
+  & > p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: $dark;
+    line-height: 200%;
+    text-align: justify;
+    letter-spacing: 0.3rem;
+  }
+}
+.left-column {
+  grid-area: left;
+
+  @include mobile {
+    padding: 5vw 0;
+  }
+}
+.right-column {
+  grid-area: right;
+
+  @include mobile {
+    padding: 5vw;
+  }
+}
+
+/******* image styles *******/
+.image {
+  border-radius: 3rem;
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
+}
