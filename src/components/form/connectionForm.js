@@ -3,8 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import hcnyApi from '../../api/hcny';
-import MyTextInput from './MyTextInput';
-import MyTextArea from './MyTextArea';
+import MyTextInput from './myTextInput';
 import * as formStyles from '../../styles/modules/form.module.scss';
 
 const ConnectionForm = () => {
