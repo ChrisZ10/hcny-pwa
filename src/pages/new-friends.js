@@ -7,6 +7,8 @@ import Head from '../components/head';
 import Banner from '../components/banner';
 import Welcome from '../components/aboutUs/welcome';
 import GetInvolved from '../components/newFriends/getInvolved';
+import ConnectionForm from '../components/form/connectionForm';
+import * as layoutStyles from '../styles/modules/layout.module.scss';
 
 const NewFriends = () => {
 
@@ -44,6 +46,9 @@ const NewFriends = () => {
       />
       <Welcome />
       <GetInvolved />
+      <div className = { layoutStyles.formContainer } style = {{ backgroundColor: "#e4e4e4" }}>
+        <ConnectionForm />
+      </div>
     </Layout>
   );
 };

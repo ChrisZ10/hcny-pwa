@@ -12,9 +12,9 @@
 }
 
 .form-container {
-  padding: 10vh 10vw;
+  padding: 10vh 10vw 15vh;
 
   @include desktop-and-above {
-    padding: 10vh 20vw;
+    padding: 10vh 20vw 15vh;
   }
 }
