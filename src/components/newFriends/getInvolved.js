@@ -12,7 +12,7 @@ const GetInvolved = () => {
       banner: imageSharp (
         original: {
           src: {
-            regex: "/.*sanctuary-2.*/"
+            regex: "/.*sanctuary.*/"
           }
         }
       ) {
