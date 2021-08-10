@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import hcnyApi from '../../api/hcny';
 import MyTextInput from './myTextInput';
 import MyTextArea from './myTextArea';
+import MyCheckBox from './myCheckBox';
 import * as formStyles from '../../styles/modules/form.module.scss';
 
 const PrayerRequestForm = () => {
@@ -16,6 +17,7 @@ const PrayerRequestForm = () => {
     const email = values.email;
     const phone = values.phone || "";
     const prayerRequest = values.prayerRequest;
+    const open = values.open;
 
     try {
       const res = await hcnyApi.post('/api/v1/prayer-request-form', { firstName, lastName, email, phone, prayerRequest });
@@ -48,7 +50,8 @@ const PrayerRequestForm = () => {
           lastName: "",
           email: "",
           phone: "",
-          prayerRequest: ""
+          prayerRequest: "",
+          open: "f"
         }}
         validationSchema = { Yup.object({
           firstName: Yup.string()
@@ -97,6 +100,15 @@ const PrayerRequestForm = () => {
             name = "prayerRequest"
             type = "text"
             placeholder = "您的代禱事項"
+          />
+          <MyCheckBox
+            label = "是否公開代禱事項"
+            name = "open"
+            type = "radio"
+            options = {[
+              {value: "t", label: "是"},
+              {value: "f", label: "否"}
+            ]}
           />
           <button className = { formStyles.submit } type = "submit">提交</button>
         </Form>
