@@ -27,19 +27,19 @@ const extractInputProps = ( { formik, options, ...otherProps }, option ) => {
     ...otherProps
   }
 
-  if (props.type === 'radio') {
-    props.value = option.value;
-    props.checked = option.value === formik.values[props.name];
-  } else if (props.type === 'checkbox') {
+  if (props.type === 'checkbox') {
     props.value = option.value;
     props.checked = formik.values[props.name].includes(option.value);
     props.onChange = ( event ) => {
       const val = formik.values[props.name];
       event.target.checked? 
         val.push( event.target.value ) : 
-        val.slice(val.indexOf( event.target.value ));
+        val.splice(val.indexOf( event.target.value ), 1);
       formik.setFieldValue(val);
     };
+  } else if (props.type === 'radio') {
+    props.value = option.value;
+    props.checked = option.value === formik.values[props.name];
   }
 
   return props;
