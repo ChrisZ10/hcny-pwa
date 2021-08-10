@@ -26,7 +26,7 @@ const ConnectionForm = () => {
     const ref = values.ref || "";
 
     try {
-      const res = await hcnyApi.post('/api/v1/connection-form', { firstName, lastName, email, phone });
+      const res = await hcnyApi.post('/api/v1/connection-form', { firstName, lastName, gender, email, phone, address, city, state, zip, status, age, about, ref });
       if (res.data.success) {
         return true;
       }

@@ -20,7 +20,7 @@ const PrayerRequestForm = () => {
     const open = values.open;
 
     try {
-      const res = await hcnyApi.post('/api/v1/prayer-request-form', { firstName, lastName, email, phone, prayerRequest });
+      const res = await hcnyApi.post('/api/v1/prayer-request-form', { firstName, lastName, email, phone, prayerRequest, open });
       if (res.data.success) {
         return true;
       }
