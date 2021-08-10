@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 
 import hcnyApi from '../../api/hcny';
 import MyTextInput from './myTextInput';
+import MyCheckBox from './myCheckBox';
 import * as formStyles from '../../styles/modules/form.module.scss';
 
 const ConnectionForm = () => {
@@ -12,6 +13,7 @@ const ConnectionForm = () => {
   const sendDataToEmail = async (values) => {
     const firstName = values.firstName;
     const lastName = values.lastName;
+    const gender = values.gender;
     const email = values.email;
     const phone = values.phone || "";
 
@@ -58,7 +60,9 @@ const ConnectionForm = () => {
             .email("請填寫有效的郵箱地址")
             .required("必填"),
           phone: Yup.string()
-            .matches(regex, "請填寫有效的電話號碼")
+            .matches(regex, "請填寫有效的電話號碼"),
+          gender: Yup.string()
+            .required("必選")
         })}
         onSubmit = { handleSubmit }
       >
@@ -86,6 +90,15 @@ const ConnectionForm = () => {
             name = "phone"
             type = "text"
             placeholder = "您的電話號碼"
+          />
+          <MyCheckBox
+            label = "性別*"
+            name = "gender"
+            type = "radio"
+            options = {[
+              {value: "m", label: "先生"},
+              {value: "f", label: "女士"}
+            ]}
           />
           <button className = { formStyles.submit } type = "submit">提交</button>
         </Form>

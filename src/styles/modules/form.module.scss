@@ -57,3 +57,52 @@
     color: $dark;
   }
 }
+
+.option-container {
+  margin-bottom: 1.5rem;
+}
+
+.option {
+  margin-right: 3rem;
+
+  & > input {
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+
+  & > input:after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    top: -2px;
+    left: -1px;
+    width: 15px;
+    height: 15px;
+    background-color: $light;
+    border-radius: 15px;
+    border: 1px solid $dark;
+  }
+
+  & > input:checked:after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    top: -2px;
+    left: -1px;
+    width: 15px;
+    height: 15px;
+    background-color: $primary;
+    border-radius: 15px;
+    border: 1px solid $dark;
+  }
+
+  & > span {
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: $dark;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
+  }
+}
