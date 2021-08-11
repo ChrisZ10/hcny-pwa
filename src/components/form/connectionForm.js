@@ -36,11 +36,30 @@ const ConnectionForm = () => {
     }
   };
 
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+  const handleSubmit = (values, { setSubmitting, resetForm, setFieldValue }) => {
     const isSuccessful = sendDataToEmail(values);
     if (isSuccessful) {
       setSubmitting(false);
-      resetForm();
+      resetForm({
+        values: {
+          firstName: "",
+          lastName: "",
+          gender: "",
+          email: "",
+          phone: "",
+          address: "",
+          city: "",
+          state: "",
+          zip: "",
+          status: "",
+          age: "",
+          about: [],
+          ref: ""
+        },
+        errors: {
+          gender: ""
+        }
+      });
       alert("提交成功");
     } else {
       alert("提交失敗");
@@ -79,7 +98,15 @@ const ConnectionForm = () => {
             .email("請填寫有效的郵箱地址")
             .required("必填"),
           phone: Yup.string()
-            .matches(regex, "請填寫有效的電話號碼")
+            .matches(regex, "請填寫有效的電話號碼"),
+          city: Yup.string()
+            .max(20, "請填寫最多20個字符"),
+          state: Yup.string()
+            .max(15, "請填寫最多15個字符"),
+          zip: Yup.string()
+            .max(10, "請填寫最多10個字符"),
+          ref: Yup.string()
+            .max(20, "請填寫最多20個字符")
         })}
         onSubmit = { handleSubmit }
       >
