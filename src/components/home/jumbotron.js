@@ -34,7 +34,7 @@ const Jumbotron = () => {
     <div className = { jumbotronStyles.grid }>      
       <StaticImage
         className = { jumbotronStyles.background }
-        src = "../../assets/wheat.jpg"
+        src = "../../assets/wheat-3.jpg"
         alt = "wheat"
         layout = "fullWidth"
         placeholder = "blurred"

@@ -20,10 +20,6 @@
     margin-bottom: 3rem;
   }
 }
-.cover {
-  border-radius: 3rem;
-  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
-}
 
 /******* right column *******/
 .right-column {
@@ -33,18 +29,17 @@
 
   @include desktop-and-above {
     margin-left: 2rem;
+    padding: 3rem;
   }
 
   & > p {
     margin: 0;
-    letter-spacing: 0.3rem;
     color: $dark;
 
     @include tablet {
       text-align: center;
     }
     @include mobile {
-      line-height: 150%;
       text-align: center;
       letter-spacing: 0;
     }
@@ -53,15 +48,28 @@
 
 /******* typography *******/
 $size: 3.5rem;
+$size-2: 3rem;
 .title {
   font-size: calc(#{$size});
   font-weight: bold;
+  line-height: 100%;
+  margin: 1rem 0 !important;
+  @include mobile {
+    font-size: calc(#{$size-2});
+  }
 }
 .subtitle {
   font-size: calc(#{$size} * 0.4);
+  font-weight: 300;
+  @include mobile {
+    font-size: calc(#{$size-2} * 0.4);
+  }
 }
 .speaker {
   font-size: calc(#{$size} * 0.7);
+  @include mobile {
+    font-size: calc(#{$size-2} * 0.7);
+  }
 }
 
 /******* button group *******/
@@ -79,12 +87,16 @@ $size: 3.5rem;
   /******* general button style *******/
   & > a {
     margin-right: 1rem;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     text-decoration: none;
     font-size: 1.5rem;
-    letter-spacing: 0.5rem;
+    font-weight: 300;
     border: $primary solid 3px;
-    border-radius: 3rem;
+
+    @include mobile {
+      font-size: 1.2rem;
+      padding: 0.3rem 1.2rem;
+    }
   }
 }
 .button {

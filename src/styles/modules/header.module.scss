@@ -15,7 +15,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 12vh;
-  box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+  //box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
   padding-top: 1rem;
   padding-bottom: 1rem;
 
@@ -53,14 +53,14 @@ nav {
   @include mobile {
     position: absolute;
     left: 0;
-    top: 12vh;
+    top: 5rem;
     width: 100%;
     padding: 1rem 0 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: left;
     background-color: white;
-    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+    //box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
     visibility: hidden;
   }
 }
@@ -73,13 +73,10 @@ nav {
 .navbar-item {
   & > * {
     text-decoration: none;
-    letter-spacing: 3px;
+    letter-spacing: 0.2rem;
     color: $dark;
     font-size: 1.2rem;
-
-    @include mobile {
-      font-size: 1.5rem;
-    }
+    font-weight: 300;
   }
 
   &:hover {
@@ -139,18 +136,14 @@ nav {
   position: absolute;
   top: 8vh;
   padding: 1rem;
-  background-color: $primary;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  //box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
   visibility: hidden;
 
   li {
     list-style: none;
     margin: 1rem;
     font-size: 1.2rem;
-
-    @include mobile {
-      font-size: 1.5rem;
-    }
   }
 }
 .navbar-dropdown-active {
@@ -167,12 +160,13 @@ nav {
 
 /******* dropdown item styles *******/
 .navbar-dropdown-item {
-  color: white;
+  color: $dark;
   text-decoration: none;
   letter-spacing: 0.2rem;
+  font-weight: 300;
 
   &:hover {
-    color: $dark;
+    color: $primary;
   }
 
   @include mobile {
