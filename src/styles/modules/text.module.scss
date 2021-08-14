@@ -8,7 +8,7 @@
   line-height: 100%;
 }
 
-.jumboTitle {
+.jumbo-title {
   @extend .title;
   margin: 0;
   font-weight: bold;
@@ -19,7 +19,7 @@
   }
 }
 
-.jumboSubtitle {
+.jumbo-subtitle {
   @extend .subtitle;
   font-weight: 200;
   font-size: 6rem;
@@ -30,8 +30,8 @@
   }
 }
 
-.bannerTitle {
-  @extend .jumboTitle;
+.banner-title {
+  @extend .jumbo-title;
   font-size: 5rem !important;
 
   @include mobile {
@@ -39,12 +39,46 @@
   }
 }
 
-.bannerSubtitle {
-  @extend .jumboSubtitle;
+.banner-subtitle {
+  @extend .jumbo-subtitle;
   font-size: 2.5rem !important;
   margin: 2rem 0 !important;
 
   @include mobile {
     font-size: 2rem !important;
   }
+}
+
+.text {
+  margin: 1rem 0;
+  color: $dark;
+  line-height: 100%;
+
+  @include tablet {
+    text-align: center;
+  }
+  
+  @include mobile {
+    text-align: center;
+    letter-spacing: 0;
+  }
+}
+
+.text-title {
+  @extend .text;
+  margin: 1rem 0;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.text-subtitle {
+  @extend .text;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.text-description {
+  @extend .text;
+  font-size: 1.5rem;
+  font-weight: normal;
 }

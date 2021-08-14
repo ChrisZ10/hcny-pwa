@@ -18,3 +18,37 @@
     padding: 10vh 20vw 15vh;
   }
 }
+
+.grid-seven-five-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10vh 10vw;
+
+  @include desktop-and-above {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.left-column {
+  padding: 0;
+  margin-bottom: 3rem;
+
+  @include desktop-and-above {
+    padding: 3rem;
+  }
+}
+
+.right-column {
+  padding: 0;
+  
+  @include desktop-and-above {
+    padding: 3rem;
+  }
+}
+
+.right-column-text {
+  @extend .right-column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
