@@ -3,6 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 import * as visionStyles from '../../styles/modules/home/vision.module.scss';
+import * as buttonStyles from '../../styles/modules/button.module.scss';
 
 const Vision = () => {
 
@@ -24,8 +25,8 @@ const Vision = () => {
         <p className = { visionStyles.title }>{ title }</p>
         <p className = { visionStyles.description }>{ description }</p>
 
-        <div className = { visionStyles.buttonContainer }>
-          <a href = "#vision" className = { visionStyles.button } >了解教會異象</a>
+        <div className = { buttonStyles.lightButtonContainer }>
+          <a href = "#vision" className = { buttonStyles.lightButton } >了解教會異象</a>
         </div>
       </div>
     </div>

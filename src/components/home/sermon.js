@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import * as sermonStyles from '../../styles/modules/home/sermon.module.scss';
+import * as buttonStyles from '../../styles/modules/button.module.scss';
 
 const Sermon = () => {
 
@@ -33,9 +34,9 @@ const Sermon = () => {
         <p className = { sermonStyles.title }>{ data.title }</p>
         <p className = { sermonStyles.speaker }>{ data.speaker }</p>
 
-        <div className = { sermonStyles.buttonContainer }>
-          <a href = "#watch" className = { sermonStyles.button }>觀看</a>
-          <a href = "#more" className = { sermonStyles.buttonHollow }>更多</a>
+        <div className = { buttonStyles.regButtonContainer }>
+          <a href = "#watch" className = { buttonStyles.regButton }>觀看</a>
+          <a href = "#more" className = { buttonStyles.regButtonHollow }>更多</a>
         </div>
       </div>
     

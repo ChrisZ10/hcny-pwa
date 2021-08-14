@@ -1,0 +1,91 @@
+@import "../base/variables.scss";
+@import "../base/baseline.scss";
+
+.jumbo-button-container {
+  display: flex;
+}
+.jumbo-button {
+  text-decoration: none;
+  border: 3px solid white;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  margin: 3rem auto;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: $dark;
+  }
+
+  @include mobile {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+.reg-button-container {
+  display: flex;
+  margin-top: 2rem;
+
+  @include tablet {
+    margin: 2rem auto;
+  }
+  @include mobile {
+    margin: 2rem auto 1rem;
+  }
+
+  & > a {
+    margin-right: 1rem;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    border: $primary solid 3px;
+
+    @include mobile {
+      font-size: 1.2rem;
+      padding: 0.3rem 1.2rem;
+    }
+  }
+}
+.reg-button {
+  background-color: $primary;
+  color: white;
+
+  &:hover {
+    color: $dark;
+  }
+}
+.reg-button-hollow {
+  color: $primary;
+
+  &:hover {
+    color: $dark;
+  }
+}
+
+.light-button-container {
+  display: flex;
+}
+.light-button {
+  text-decoration: none;
+  border: 3px solid white;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: $dark;
+  }
+
+  @include mobile {
+    font-size: 1.2rem;
+    padding: 0.3rem 1.2rem;
+  }
+}

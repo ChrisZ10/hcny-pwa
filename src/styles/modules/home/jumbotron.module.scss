@@ -7,11 +7,11 @@
 }
 
 .background {
-  grid-area: 1 / 1;
+  grid-area: 1/1;
 }
 
 .container {
-  grid-area: 1 / 1;
+  grid-area: 1/1;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -19,29 +19,4 @@
 
 .main {
   margin: auto;
-}
-
-/******* button *******/
-.button-container {
-  display: flex;
-}
-.button {
-  text-decoration: none;
-  border: 3px solid white;
-  background-color: transparent;
-  padding: 1rem 2rem;
-  margin: 3rem auto;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: white;
-
-  &:hover {
-    background-color: white;
-    color: $dark;
-  }
-
-  @include mobile {
-    font-size: 1.2rem;
-    padding: 0.5rem 1.5rem;
-  }
 }
