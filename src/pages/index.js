@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
-import Jumbotron from '../components/home/jumbotron';
+import Jumbotron from '../components/jumbotron';
 import Sermon from '../components/home/sermon';
 import Vision from '../components/home/vision';
 import Location from '../components/home/location';

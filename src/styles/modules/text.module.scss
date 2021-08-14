@@ -2,28 +2,20 @@
 @import "../base/baseline.scss";
 
 .title, .subtitle {
-  color: white;
   padding: 0 2rem;
+  color: white;
   text-align: center;
   line-height: 100%;
 }
 
 .jumboTitle {
   @extend .title;
-  font-weight: bold;
   margin: 0;
+  font-weight: bold;
   font-size: 6rem;
 
   @include mobile {
     font-size: 4rem;
-  }
-}
-.bannerTitle {
-  @extend .jumboTitle;
-  font-size: 5rem !important;
-
-  @include mobile {
-    font-size: 3.5rem !important;
   }
 }
 
@@ -37,6 +29,16 @@
     font-size: 4rem;
   }
 }
+
+.bannerTitle {
+  @extend .jumboTitle;
+  font-size: 5rem !important;
+
+  @include mobile {
+    font-size: 3.5rem !important;
+  }
+}
+
 .bannerSubtitle {
   @extend .jumboSubtitle;
   font-size: 2.5rem !important;

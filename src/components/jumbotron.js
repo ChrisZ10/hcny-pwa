@@ -3,10 +3,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { BsChevronDown } from 'react-icons/bs';
 
-import * as jumbotronStyles from '../../styles/modules/home/jumbotron.module.scss';
-import * as textStyles from '../../styles/modules/text.module.scss';
-import * as chevronStyles from '../../styles/modules/chevron.module.scss';
-import * as buttonStyles from '../../styles/modules/button.module.scss';
+import * as jumbotronStyles from '../styles/modules/jumbotron.module.scss';
+import * as textStyles from '../styles/modules/text.module.scss';
+import * as chevronStyles from '../styles/modules/chevron.module.scss';
+import * as buttonStyles from '../styles/modules/button.module.scss';
 
 const Jumbotron = () => {
   const data = useStaticQuery(graphql`
