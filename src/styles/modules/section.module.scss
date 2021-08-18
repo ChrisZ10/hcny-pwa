@@ -2,15 +2,7 @@
 
 .grid {
   display: grid;
-  height: 60vh;
-}
-.grid-md {
-  display: grid;
-  height: 40vh;
-
-  @include mobile {
-    height: 30vh;
-  }
+  min-height: 40vh;
 }
 
 .background {
