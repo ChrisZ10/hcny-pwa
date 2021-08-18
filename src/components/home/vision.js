@@ -19,7 +19,11 @@ const Vision = () => {
       ) {
         gatsbyImageData (
           placeholder: BLURRED,
+          aspectRatio: 2.5,
           layout: FULL_WIDTH,
+          transformOptions: {
+            fit: OUTSIDE
+          }
           quality: 90
         )
       }
