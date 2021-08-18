@@ -24,7 +24,6 @@ const Sermon = () => {
           alt = "sermon cover"
           placeholder = "blurred"
           layout = "constrained"
-          className = { sermonStyles.cover }
           quality = {90}
         />
       </div>
