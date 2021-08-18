@@ -2,7 +2,10 @@
 
 .grid {
   display: grid;
-  min-height: 40vh;
+  
+  @include desktop-and-above {
+    height: 60vh;
+  }
 }
 
 .background {
