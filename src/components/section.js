@@ -10,7 +10,7 @@ const Section = ({ imageData, title, subtitle, description, buttonText }) => {
     <div className = { sectionStyles.grid }>
       <GatsbyImage
         className = { sectionStyles.background }
-        image = { getImage( imageData ) }
+        image = { getImage(imageData) }
         alt = "Section Background"
       />
 
@@ -20,9 +20,11 @@ const Section = ({ imageData, title, subtitle, description, buttonText }) => {
           { title !== null && <h1 className = { textStyles.sectionTitle }>{ title }</h1> }
           { description !== null && <h1 className = { textStyles.sectionDescription }>{ title }</h1> }
 
-          <div className = { buttonStyles.lightButtonContainer }>
-            <a href = "#vision" className = { buttonStyles.lightButton } >了解教會異象</a>
-          </div>
+          { buttonText !== null && 
+            <div className = { buttonStyles.lightButtonContainer }>
+              <a href = "#vision" className = { buttonStyles.lightButton } >{ buttonText }</a>
+            </div> 
+          }
         </div>
       </div>
     </div>
