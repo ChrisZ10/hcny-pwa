@@ -18,7 +18,7 @@ const Section = ({ imageData, title, subtitle, description, buttonText }) => {
         <div className = {sectionStyles.main}>
           { subtitle !== null && <h1 className = { textStyles.sectionSubtitle }>{ subtitle }</h1> }
           { title !== null && <h1 className = { textStyles.sectionTitle }>{ title }</h1> }
-          { description !== null && <h1 className = { textStyles.sectionDescription }>{ title }</h1> }
+          { description !== null && <h1 className = { textStyles.sectionDescription }>{ description }</h1> }
 
           { buttonText !== null && 
             <div className = { buttonStyles.lightButtonContainer }>
