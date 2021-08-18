@@ -36,6 +36,7 @@ const Vision = () => {
       title = { title }
       subtitle = { slogan }  
       description = { description }
+      buttonText = "了解教會異象"
     />
   );
 }
